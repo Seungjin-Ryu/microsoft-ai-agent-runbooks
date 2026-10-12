@@ -11,14 +11,14 @@ Each scenario folder is self-contained and follows a standardized structure so t
 
 ```
 📦 01-scenarios/
-├── Calendar-Request-Approval-Agent/          (Available)
-│   ├── 0.Resources/
+├── 📂 Calendar-Request-Approval-Agent/          ← ✅ Available
+│   ├── 📂 0.Resources/
 │   ├── 1.Overview.md
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
 │   └── 4.Sample-prompts.md
-├── Country-Aware-HR-Knowledge-Agent/         (Available)
-│   ├── 0.Resources/
+├── 📂 Country-Aware-HR-Knowledge-Agent/         ← ✅ Available
+│   ├── 📂 0.Resources/
 │   ├── 1.Overview.md
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
