@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="650" viewBox="0 0 1440 650" font-family="Arial" font-size="16" fill="#203040" role="img" aria-labelledby="title description">
+  <title id="title">Contract-review scenario component map</title>
+  <desc id="description">Authorized sources feed a Copilot Studio agent with instructions, model, read-only tools and a review skill. A bounded clause-review procedure produces draft registers and evidence for counsel. A separate controlled workflow handles intake, internal notification and approved review-record updates. No agreement execution or signature is included.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#526273"/>
+    </marker>
+  </defs>
+  <rect width="1440" height="650" fill="#ffffff"/>
+  <text x="36" y="42" font-size="28" font-weight="700">Contract review: sources, reasoning, drafts and control</text>
+  <text x="36" y="72">Logical reference design. Counsel owns legal decisions; the agent does not execute agreements.</text>
+
+  <rect x="36" y="108" width="248" height="376" rx="12" fill="#f7f9fc" stroke="#d9e0e8" stroke-width="1.5"/>
+  <rect x="36" y="108" width="248" height="44" rx="10" fill="#0078d4"/>
+  <text x="54" y="136" font-size="17" font-weight="700" fill="#ffffff">AUTHORIZED SOURCES</text>
+  <rect x="50" y="170" width="220" height="84" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="65" y="197" font-weight="700">Contract repository</text>
+  <text x="65" y="224">Exact version and scope</text>
+  <rect x="50" y="268" width="220" height="94" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="65" y="295" font-weight="700">Approved playbook</text>
+  <text x="65" y="322">Standards and fallback IDs</text>
+  <text x="65" y="346">Applicable source versions</text>
+  <rect x="50" y="376" width="220" height="92" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="65" y="403" font-weight="700">Optional history</text>
+  <text x="65" y="430">Authorized past agreements</text>
+  <text x="65" y="454" font-size="14">Context, not a policy override</text>
+
+  <rect x="314" y="108" width="248" height="376" rx="12" fill="#f7f9fc" stroke="#d9e0e8" stroke-width="1.5"/>
+  <rect x="314" y="108" width="248" height="44" rx="10" fill="#6b4c9a"/>
+  <text x="332" y="136" font-size="17" font-weight="700" fill="#ffffff">COPILOT STUDIO AGENT</text>
+  <rect x="328" y="170" width="220" height="298" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="343" y="202" font-weight="700">Instructions and scope</text>
+  <text x="343" y="243" font-weight="700">Selected model</text>
+  <text x="343" y="284" font-weight="700">Read-only retrieval tools</text>
+  <text x="343" y="325" font-weight="700">Contract-review skill</text>
+  <text x="343" y="366" font-weight="700">Governed file processing</text>
+  <text x="343" y="413" font-size="14">Harness coordinates context,</text>
+  <text x="343" y="435" font-size="14">tool calls and safe replanning.</text>
+
+  <rect x="592" y="108" width="248" height="376" rx="12" fill="#f7f9fc" stroke="#d9e0e8" stroke-width="1.5"/>
+  <rect x="592" y="108" width="248" height="44" rx="10" fill="#bd5100"/>
+  <text x="610" y="136" font-size="17" font-weight="700" fill="#ffffff">REVIEW PROCEDURE</text>
+  <rect x="606" y="170" width="220" height="48" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="621" y="201" font-weight="700">1. Retrieve full content</text>
+  <rect x="606" y="230" width="220" height="48" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="621" y="261" font-weight="700">2. Inventory the clauses</text>
+  <rect x="606" y="290" width="220" height="48" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="621" y="321" font-weight="700">3. Compare and classify</text>
+  <rect x="606" y="350" width="220" height="48" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="621" y="381" font-weight="700">4. Draft only if permitted</text>
+  <rect x="606" y="410" width="220" height="48" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="621" y="441" font-weight="700">5. Verify cited evidence</text>
+
+  <rect x="870" y="108" width="248" height="376" rx="12" fill="#f7f9fc" stroke="#d9e0e8" stroke-width="1.5"/>
+  <rect x="870" y="108" width="248" height="44" rx="10" fill="#107c10"/>
+  <text x="888" y="136" font-size="17" font-weight="700" fill="#ffffff">VERSIONED DRAFTS</text>
+  <rect x="884" y="170" width="220" height="298" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="899" y="204" font-weight="700">Review summary</text>
+  <text x="899" y="250" font-weight="700">Clause/deviation registers</text>
+  <text x="899" y="296" font-weight="700">Permitted fallback text</text>
+  <text x="899" y="342" font-weight="700">Source/coverage manifest</text>
+  <text x="899" y="388" font-weight="700">Counsel review queue</text>
+  <text x="899" y="437" font-size="14">Complete analysis is not approval.</text>
+
+  <rect x="1148" y="108" width="256" height="376" rx="12" fill="#f7f9fc" stroke="#d9e0e8" stroke-width="1.5"/>
+  <rect x="1148" y="108" width="256" height="44" rx="10" fill="#c50f1f"/>
+  <text x="1166" y="136" font-size="17" font-weight="700" fill="#ffffff">CONTROLLED HANDOFF</text>
+  <rect x="1162" y="170" width="228" height="112" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="1177" y="200" font-weight="700">Draft intake and counsel</text>
+  <text x="1177" y="230">Persist the exact version</text>
+  <text x="1177" y="255">Notify the internal reviewer</text>
+  <path d="M 1276 285 L 1276 313" fill="none" stroke="#526273" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="1162" y="322" width="228" height="146" rx="8" fill="#ffffff" stroke="#ccd5df" stroke-width="1.5"/>
+  <text x="1177" y="352" font-weight="700">Approval workflow</text>
+  <text x="1177" y="382">Authority and freshness</text>
+  <text x="1177" y="407">Exact-artifact approval</text>
+  <text x="1177" y="432">Idempotent record update</text>
+  <text x="1177" y="455" font-size="14">Review record, not execution</text>
+
+  <path d="M 286 306 L 311 306" fill="none" stroke="#526273" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 564 306 L 589 306" fill="none" stroke="#526273" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 842 306 L 867 306" fill="none" stroke="#526273" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 1120 226 L 1145 226" fill="none" stroke="#526273" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="36" y="510" width="1368" height="104" rx="10" fill="#fff5ef" stroke="#e2a071" stroke-width="1.5"/>
+  <text x="54" y="541" font-weight="700">BOUNDARIES</text>
+  <text x="54" y="570">Counsel-only clauses: no generated replacement wording. Prior concessions: no automatic override of approved standards.</text>
+  <text x="54" y="596">Denied access and incomplete evidence remain explicit. No autonomous legal decision, agreement execution, signature or external delivery.</text>
+  <text x="36" y="638" font-size="14">Logical reference design; not a physical deployment topology.</text>
+</svg>

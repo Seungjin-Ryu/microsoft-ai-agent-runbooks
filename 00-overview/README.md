@@ -33,7 +33,7 @@ AI Agent Runbooks provides guidance across the following Microsoft AI platforms:
 
 | Platform | Description |
 |----------|-------------|
-| **Microsoft Copilot Studio** | Low-code platform for building, testing, and deploying conversational AI agents and copilots across Microsoft 365 and custom channels |
+| **Microsoft Copilot Studio** | Low-code platform for building, testing, and deploying conversational AI agents and copilots across Microsoft 365 and custom channels, including standard and GitHub Copilot harnesses |
 | **Azure AI Foundry** | Enterprise-grade platform for building, evaluating, and deploying custom AI models and agent solutions using Azure OpenAI and Azure AI services |
 | **Microsoft 365 Copilot** | Native AI experience embedded in Microsoft 365 apps; extended through declarative agents and Copilot extensibility scenarios |
 
@@ -46,8 +46,10 @@ The repository organizes AI Agent scenarios by business domain and agent type. T
 | Domain | Agent Name | Description |
 |--------|------------|-------------|
 | Human Resources | HR Onboarding Agent | Guides new employees through onboarding tasks, policy acknowledgments, and first-day workflows |
+| Legal Operations | [Contract Review with GitHub Copilot Harness](../01-scenarios/Contract-Review-GitHub-Copilot-Harness-Agent/1.Overview.md) | Copilot Studio reference design for evidence-linked contract comparison and approved fallback drafts, with mandatory qualified counsel review |
+| Compliance | [Compliance Self-Inspection Agent](../01-scenarios/Compliance-Self-Inspection-Agent/1.Overview.md) | Draft runbook for employee-initiated checks of their own OneDrive and Outlook content, personal attention ratings, and metadata-only completion reporting to Legal |
 
-Additional scenarios across IT & Operations, Customer Service, Finance, Legal, and Sales domains are planned for future releases.
+See the [scenario catalog](../01-scenarios/README.md) for the complete current list. For adaptive execution inside Copilot Studio, see the [GitHub Copilot Harness Execution pattern](../02-patterns/GitHub-Copilot-Harness-Execution/GitHub-Copilot-Harness-Execution.md).
 
 ---
 

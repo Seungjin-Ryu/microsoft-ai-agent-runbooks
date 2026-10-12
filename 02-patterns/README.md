@@ -21,7 +21,7 @@ Patterns are reusable technical building blocks that solve recurring implementat
 
 ## Pattern Folder Structure Overview
 
-The `02-patterns/` folder contains one subfolder per supported technical pattern. Each pattern folder is self-contained and follows a standardized structure.
+The `02-patterns/` folder contains one subfolder per supported technical pattern. Each pattern folder follows a standardized documentation structure; supporting assets may be shared with a scenario.
 
 ```
 02-patterns/
@@ -58,6 +58,9 @@ The `02-patterns/` folder contains one subfolder per supported technical pattern
 ├── Enterprise-RAG-Pattern/                                          ← ✅ Available
 │   ├── Enterprise-RAG-Pattern.md
 │   └── Enterprise-RAG-Pattern-Runbook.md
+├── GitHub-Copilot-Harness-Execution/
+│   ├── GitHub-Copilot-Harness-Execution.md
+│   └── GitHub-Copilot-Harness-Execution-Runbook.md
 ├── Grounding-and-Response-Quality-Remediation/                       ← ✅ Available
 │   ├── Grounding-and-Response-Quality-Remediation.md
 │   └── Grounding-and-Response-Quality-Remediation-Runbook.md
@@ -158,6 +161,7 @@ Step 6. Cross-reference 01-scenarios/ → apply the pattern within the scenario 
 | [Governed Analytics Review](./Governed-Analytics-Review/Governed-Analytics-Review.md) | Explicit source/KPI contracts, period/filter/units reconciliation, RLS, supported explanations and consistent narrative/dashboard outputs with independent artifact-access review. | Power BI, Microsoft Fabric, Excel Online, Microsoft 365 Copilot Cowork | ✅ Available |
 | [Enterprise RAG Pattern](./Enterprise-RAG-Pattern/Enterprise-RAG-Pattern.md) | Multi-source, governed retrieval-augmented generation. Grounds LLM responses in organizational data with access control and citation trails. | Copilot Studio, Azure AI Search, Azure OpenAI, Foundry IQ | ✅ Available |
 | [Agentic Workflow Orchestration](./Agentic-Workflow-Orchestration/Agentic-Workflow-Orchestration.md) | Multi-agent workflow orchestration pattern for coordinating complex, multi-step tasks across multiple specialized agents. | Copilot Studio, Azure AI Foundry, Agent Framework | ✅ Available |
+| [GitHub Copilot Harness Execution](./GitHub-Copilot-Harness-Execution/GitHub-Copilot-Harness-Execution.md) | Adaptive planning, knowledge, tools, skills, and Hooks inside Copilot Studio; independent backend authorization, exact-version human approvals, idempotency, and controlled consequential workflows. Includes a separate implementation runbook. | Microsoft Copilot Studio, GitHub Copilot Harness, skills, Hooks, workflows | — |
 | [Declarative vs Custom Engine Agent](./Declarative-vs-Custom-engine-agent/Declarative-Agents-vs-Copilot-Studio-Custom-Engine-Agents.md) | Decision framework for choosing between Declarative Agents and Copilot Studio Custom Engine Agents. Covers three build methods (Agent Builder, Copilot Studio, Agents Toolkit), knowledge scale matrices, reference architectures, use-case scenarios, performance comparisons, and full implementation runbooks for both agent types and multi-agent composition. | Microsoft 365 Copilot, Copilot Studio, Agent Builder, Microsoft 365 Agents Toolkit, Azure OpenAI, Azure AI Search, Power Automate | ✅ Available |
 | [Copilot Connector Knowledge Onboarding](./Copilot-Connector-Knowledge-Onboarding/Copilot-Connector-Knowledge-Onboarding.md) | Getting third-party enterprise content into the Microsoft Graph index with correct permissions, so agents can ground on it. Covers connector type selection, source permission modelling, identity mapping, staged rollout, and the positive/negative permission evidence that unblocks security review. | Microsoft 365 Copilot connectors, Microsoft Graph, ServiceNow, Jira, Confluence, Salesforce, Workday | ✅ Available |
 | [MCP Federated Connectors](./MCP-Federated-Connectors/MCP-Federated-Connectors.md) | Live, read-only external retrieval without a Microsoft 365 source index. Covers gallery and custom onboarding, supported experiences, complex-authentication gaps, private-only on-premises blockers, conditional gateway designs, and host-level acceptance. Separate from direct MCP agent tools. | Microsoft 365 Copilot connectors, MCP, Entra SSO, OAuth 2.0, Researcher, Cowork | ✅ Available |
