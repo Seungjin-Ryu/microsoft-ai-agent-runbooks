@@ -23,14 +23,14 @@ Each scenario folder is self-contained and follows a standardized structure so t
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
 │   └── 4.Sample-prompts.md
-├── Contract-Review-GitHub-Copilot-Harness-Agent/
-│   ├── 0.Resources/
+├── 📂 Contract-Review-GitHub-Copilot-Harness-Agent/ ← ✅ Available
+│   ├── 📂 0.Resources/
 │   ├── 1.Overview.md
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
 │   └── 4.Sample-prompts.md
-├── Compliance-Self-Inspection-Agent/          (Draft)
-│   ├── 0.Resources/
+├── 📂 Compliance-Self-Inspection-Agent/     ← ✅ Available
+│   ├── 📂 0.Resources/
 │   ├── 1.Overview.md
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
@@ -211,7 +211,7 @@ acceptance are not implied; review package-specific prerequisites before install
 | [Client-Meeting-Preparation-Agent](./Client-Meeting-Preparation-Agent/) | Client Advisory / Relationship Management | Pre-meeting briefings and post-meeting file notes for advisers, relationship managers, and account teams. Assembles positions, relationship history, outstanding items, and watch-outs from the book of record, correspondence, and the client file — with hard advice boundaries, information barrier enforcement, and full citation. Generalises across wealth, banking, insurance, subscriptions, and durable assets. | Microsoft 365 Copilot, Copilot connectors or MCP server, SharePoint, Microsoft Purview | ✅ Available |
 | [Contract-and-Legal-Intelligence-Agent](./Contract-and-Legal-Intelligence-Agent/) | Legal Operations / Contract Lifecycle | Clause extraction, risk flagging against documented standard positions, tracked-changes redlines, and evidence retrieval across a document corpus — with a hard legal-advice boundary and a qualified human on every decision. Covers DPA and NDA review, negotiation support, resolutions, and claim evidence assembly. | Copilot Studio, Microsoft Foundry / Document Intelligence, SharePoint, Word | ✅ Available |
 | [Contract Review with GitHub Copilot Harness](./Contract-Review-GitHub-Copilot-Harness-Agent/1.Overview.md) | Legal Operations / Contract Review | Reference design for evidence-linked clause comparison and approved fallback drafts; authorized read-only tools, a reusable review skill, and mandatory qualified counsel review. No exported agent or executed acceptance evidence is included. | Microsoft Copilot Studio, GitHub Copilot Harness, skills, controlled workflows | — |
-| [Compliance Self-Inspection Agent](./Compliance-Self-Inspection-Agent/1.Overview.md) | Compliance Risk Awareness / Employee Self-Inspection | Employee-initiated fair-trade / antitrust checks of their own OneDrive documents and Outlook mail; deterministic attention ratings, personal result sheets, and metadata-only completion reporting to Legal. An awareness tool, not enforcement or legal advice. | Microsoft Copilot Studio, Power Automate, Dataverse, OneDrive for Business, Outlook, SharePoint, Excel Online | Draft |
+| [Compliance Self-Inspection Agent](./Compliance-Self-Inspection-Agent/1.Overview.md) | Compliance Risk Awareness / Employee Self-Inspection | Employee-initiated fair-trade / antitrust checks of their own OneDrive documents and Outlook mail; deterministic attention ratings, personal result sheets, and metadata-only completion reporting to Legal. An awareness tool, not enforcement or legal advice. | Microsoft Copilot Studio, Power Automate, Dataverse, OneDrive for Business, Outlook, SharePoint, Excel Online | ✅ Available |
 | [Document-Processing-and-Extraction-Agent](./Document-Processing-and-Extraction-Agent/) | Operations / Back-Office Automation | Classify, extract, validate, and route high-volume documents — quotes, invoices, order confirmations, billing statements, work instructions. Multilingual OCR, validation against master data, confidence-based routing to human review, and output shaped to whatever the downstream system actually accepts (including when it has no API). | Microsoft Foundry / Document Intelligence, Content Understanding, Copilot Studio, Power Automate | ✅ Available |
 | [Email-and-Mailbox-Triage-Agent](./Email-and-Mailbox-Triage-Agent/) | Shared Mailbox Operations / Customer Service | Classifies, prioritises, routes, and drafts responses for high-volume shared mailboxes. Covers classification taxonomy design, confidence thresholds, the draft-never-send boundary, and the ticket or case handoff. The single most frequent use case in the portfolio. | Copilot Studio, Power Automate, Exchange Online, Microsoft Foundry (for attachments) | ✅ Available |
 | [Meeting-Intelligence-Agent](./Meeting-Intelligence-Agent/) | Workforce Productivity / Governance | Extracts decisions, actions, and owners from meeting transcripts with a hard evidence rule, deduplicates across recurring series, and tracks commitments to closure. Includes the consent and works-council position, the excluded-meeting categories, and the invented-action release gate. | Microsoft 365 Copilot, Copilot Studio, Microsoft Teams, Microsoft Graph, Dataverse | ✅ Available |
