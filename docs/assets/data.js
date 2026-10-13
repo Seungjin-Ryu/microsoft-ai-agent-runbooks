@@ -66,19 +66,6 @@ const SCENARIOS = [
     "type": "Business Analytics / Recurring Reviews"
   },
   {
-    "id": "Cowork-Enablement-Pilot",
-    "title": "Cowork Enablement Pilot",
-    "icon": "🚀",
-    "desc": "Repeatable process to enable Microsoft 365 Copilot Cowork for a bounded pilot: readiness, security and governance review, Copilot Credit spending policies, functional and approval testing, operational handoff and an expand, extend, pause or stop decision.",
-    "tech": [
-      "Microsoft 365 Copilot Cowork",
-      "Microsoft 365 admin center",
-      "Azure Cost Management"
-    ],
-    "status": "Available",
-    "type": "Platform Enablement / Governance"
-  },
-  {
     "id": "Autonomous-Invoice-Orchestration-Agent",
     "title": "Autonomous Invoice Orchestration Agent",
     "icon": "🧾",
@@ -402,6 +389,19 @@ const SCENARIOS = [
     ],
     "status": "Available",
     "type": "Workforce Productivity / Internal Operations"
+  },
+  {
+    "id": "Cowork-Enablement-Pilot",
+    "title": "Cowork Enablement Pilot",
+    "icon": "🤖",
+    "desc": "Repeatable process to enable Cowork for a bounded pilot: readiness, security and governance review, Copilot Credit spending policies, functional and approval testing, operational handoff and an expand/extend/pause/stop decision. No custom build; foundation for the Cowork use-case scenarios.",
+    "tech": [
+      "Microsoft 365 Copilot Cowork",
+      "Microsoft 365 admin center",
+      "Azure Cost Management"
+    ],
+    "status": "Available",
+    "type": "Platform Enablement / Governance / Cost Control"
   }
 ];
 
@@ -451,33 +451,6 @@ const PATTERNS = [
     "status": "Available",
     "file": "Governed-Analytics-Review/Governed-Analytics-Review.md",
     "theme": "Grounding & Knowledge"
-  },
-  {
-    "id": "Cowork-Spending-Policies-and-Cost-Governance",
-    "title": "Cowork Spending Policies and Cost Governance",
-    "icon": "🧾",
-    "desc": "Copilot Credit spending policies for Cowork: discovery, group scoping, policy and per-user limits, precedence, billing methods, alerts and reconciliation. Distinct from the Copilot Studio credits pattern.",
-    "tech": [
-      "Microsoft 365 Copilot Cowork",
-      "Microsoft 365 admin center",
-      "Azure Cost Management"
-    ],
-    "status": "Available",
-    "file": "Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md",
-    "theme": "Governance & Operations"
-  },
-  {
-    "id": "Pilot-to-Scale-Validation-Gates",
-    "title": "Pilot-to-Scale Validation Gates",
-    "icon": "🚦",
-    "desc": "Evidence-gated progression from pilot to scale: signed boundary, control posture, verification tests, success criteria, ownership matrix and a recorded expand, extend, pause or stop decision.",
-    "tech": [
-      "Microsoft 365 Copilot Cowork",
-      "Microsoft 365 admin center"
-    ],
-    "status": "Available",
-    "file": "Pilot-to-Scale-Validation-Gates/Pilot-to-Scale-Validation-Gates.md",
-    "theme": "Delivery & Deployment"
   },
   {
     "id": "Enterprise-RAG-Pattern",
@@ -717,6 +690,33 @@ const PATTERNS = [
     "status": "Available",
     "file": "Human-in-the-Loop-Review-and-Approval/Human-in-the-Loop-Review-and-Approval.md",
     "theme": "Governance & Operations"
+  },
+  {
+    "id": "Cowork-Spending-Policies-and-Cost-Governance",
+    "title": "Cowork Spending Policies and Cost Governance",
+    "icon": "🧩",
+    "desc": "Copilot Credit spending policies for Cowork: discovery, group scoping, policy and per-user limits, precedence, Auto-apply new services, alerts, billing methods, /cost limits and reconciliation. Distinct from the Copilot Studio credits pattern.",
+    "tech": [
+      "Microsoft 365 admin center Cost Management",
+      "Microsoft 365 Copilot Cowork",
+      "Azure Cost Management"
+    ],
+    "status": "Available",
+    "file": "Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md",
+    "theme": "Architecture & Design"
+  },
+  {
+    "id": "Pilot-to-Scale-Validation-Gates",
+    "title": "Pilot-to-Scale Validation Gates",
+    "icon": "🧩",
+    "desc": "Evidence-gated progression from pilot to scale: signed boundary, readiness and control gates, verification tests, success criteria, ownership matrix and an expand, extend, pause or stop decision.",
+    "tech": [
+      "Microsoft 365 Copilot Cowork",
+      "Microsoft 365 admin center"
+    ],
+    "status": "Available",
+    "file": "Pilot-to-Scale-Validation-Gates/Pilot-to-Scale-Validation-Gates.md",
+    "theme": "Architecture & Design"
   }
 ];
 
