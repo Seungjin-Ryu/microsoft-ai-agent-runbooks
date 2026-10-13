@@ -37,6 +37,15 @@ const SCENARIOS = [
     status: "Available"
   },
   {
+    id: "Autonomous-Invoice-Orchestration-Agent-GHCP",
+    title: "Autonomous Invoice Orchestration Agent with GHCP Harness",
+    type: "Accounts Payable / Invoice Approval",
+    icon: "🧾",
+    desc: "GitHub Copilot harness scenario that extracts fields from emailed PDF invoices into Dataverse and a JSON review file, then starts an approval or sends the invoice to Finance for review. Two Workflows flows and one runtime skill.",
+    tech: ["Microsoft Copilot Studio", "GitHub Copilot harness", "Workflows", "Outlook", "SharePoint", "Dataverse", "Approvals"],
+    status: "Available"
+  },
+  {
     id: "Calendar-Request-Approval-Agent",
     title: "Calendar Request Approval Agent",
     type: "Workforce Productivity / Approvals",
@@ -178,6 +187,15 @@ const SCENARIOS = [
     icon: "🧑‍💼",
     desc: "Autonomous agent that helps new hires find HR information — onboarding processes, policies and benefits — by grounding on a ServiceNow Knowledge Base.",
     tech: ["Microsoft Copilot Studio", "Copilot Connectors", "ServiceNow", "Power Platform"],
+    status: "Available"
+  },
+  {
+    id: "HR-Onboarding-Agent-GHCP",
+    title: "HR Onboarding Agent with GHCP Harness",
+    type: "Employee Self-Service (HR)",
+    icon: "🧑‍💼",
+    desc: "GitHub Copilot harness scenario with normal HR conversation, onboarding plans and connected user-mailbox Workflows replies using two runtime skills. Development walkthrough with documented limitations.",
+    tech: ["Microsoft Copilot Studio", "GitHub Copilot harness", "Workflows", "Outlook", "ServiceNow"],
     status: "Available"
   },
   {
