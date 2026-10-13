@@ -215,6 +215,9 @@ assuming every agent-management control applies unchanged.
 
 - Runbook: [Agent-Governance-and-Rollout-Control-Plane-Runbook.md](Agent-Governance-and-Rollout-Control-Plane-Runbook.md)
 - [Cowork Skill Delivery and Scheduled Reviews](../Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md)
+- [Cowork Spending Policies and Cost Governance](../Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md) - spending policies, limits and discovery for Cowork
+- [Pilot-to-Scale Validation Gates](../Pilot-to-Scale-Validation-Gates/Pilot-to-Scale-Validation-Gates.md) - evidence-gated expansion
+- Scenario: [Cowork Enablement Pilot](../../01-scenarios/Cowork-Enablement-Pilot/1.Overview.md) - tenant, governance and billing enablement
 - Scenario: [Chief of Staff Cowork Agent](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md) — leader/delegate scope and people-safety boundaries
 - Scenario: [Recurring Analytics Cowork Agent](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md) — data owners, RLS personas and generated-output access
 - [Copilot Credits & Cost Control](../Copilot-Credits-Cost-Control/Copilot-Credits-Cost-Control.md) — the financial half of the same problem

@@ -31,7 +31,8 @@ stop anything.
 > Cowork entitlements, meters and supported controls in the tenant. Do not assume Studio
 > rates, licensed-user exemptions, environment caps or enforcement thresholds apply.
 > `/cost`, where available, is an approximate user signal, not billing truth.
-> Follow the [Cowork delivery pattern](../Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md)
+> Follow the [Cowork billing pattern](../Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md),
+> the [Cowork delivery pattern](../Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md)
 > and [current usage-based billing guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits).
 
 Copilot Credits are the unit of agent consumption. The rates below apply to Copilot Studio's

@@ -52,6 +52,9 @@ The `02-patterns/` folder contains one subfolder per supported technical pattern
 ├── Cowork-Skill-Delivery-and-Scheduled-Reviews/                      ← ✅ Available
 │   ├── Cowork-Skill-Delivery-and-Scheduled-Reviews.md
 │   └── Cowork-Skill-Delivery-and-Scheduled-Reviews-Runbook.md
+├── Cowork-Spending-Policies-and-Cost-Governance/                     ← ✅ Available
+│   ├── Cowork-Spending-Policies-and-Cost-Governance.md
+│   └── Cowork-Spending-Policies-and-Cost-Governance-Runbook.md
 ├── Declarative-vs-Custom-engine-agent/                              ← ✅ Available
 │   ├── Declarative-Agents-vs-Copilot-Studio-Custom-Engine-Agents.md
 │   └── Declarative-Agents-vs-Copilot-Studio-Custom-Engine-Agents-Runbook.md
@@ -76,9 +79,12 @@ The `02-patterns/` folder contains one subfolder per supported technical pattern
 ├── MCP-Federated-Connectors/                                         ← ✅ Available
 │   ├── MCP-Federated-Connectors.md
 │   └── MCP-Federated-Connectors-Runbook.md
-└── MCP-Server-Integration/                                           ← ✅ Available
-    ├── MCP-Server-Integration.md
-    └── MCP-Server-Integration-Runbook.md
+├── MCP-Server-Integration/                                           ← ✅ Available
+│   ├── MCP-Server-Integration.md
+│   └── MCP-Server-Integration-Runbook.md
+└── Pilot-to-Scale-Validation-Gates/                                  ← ✅ Available
+    ├── Pilot-to-Scale-Validation-Gates.md
+    └── Pilot-to-Scale-Validation-Gates-Runbook.md
 ```
 
 ---
@@ -159,6 +165,8 @@ Step 6. Cross-reference 01-scenarios/ → apply the pattern within the scenario 
 |---------|-------------|------------------|--------|
 | [Cowork Skill Delivery and Scheduled Reviews](./Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md) | Configuration-first skill/reference lifecycle, routing, trusted packages, controlled sharing, on-demand acceptance, optional user-owned scheduled drafts, cost and rollback. | Microsoft 365 Copilot Cowork, OneDrive, skills, plugins | ✅ Available |
 | [Governed Analytics Review](./Governed-Analytics-Review/Governed-Analytics-Review.md) | Explicit source/KPI contracts, period/filter/units reconciliation, RLS, supported explanations and consistent narrative/dashboard outputs with independent artifact-access review. | Power BI, Microsoft Fabric, Excel Online, Microsoft 365 Copilot Cowork | ✅ Available |
+| [Cowork Spending Policies and Cost Governance](./Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md) | Copilot Credit spending policies for Cowork: discovery, group scoping, policy and per-user limits, precedence, Auto-apply new services, alerts, billing methods, `/cost` limits and reconciliation. Distinct from the Copilot Studio credits pattern. | Microsoft 365 admin center Cost Management, Microsoft 365 Copilot Cowork, Azure Cost Management | ✅ Available |
+| [Pilot-to-Scale Validation Gates](./Pilot-to-Scale-Validation-Gates/Pilot-to-Scale-Validation-Gates.md) | Evidence-gated progression from pilot to scale: signed boundary, readiness and control gates, verification tests, success criteria, ownership matrix and an expand, extend, pause or stop decision. | Microsoft 365 Copilot Cowork, Microsoft 365 admin center | ✅ Available |
 | [Enterprise RAG Pattern](./Enterprise-RAG-Pattern/Enterprise-RAG-Pattern.md) | Multi-source, governed retrieval-augmented generation. Grounds LLM responses in organizational data with access control and citation trails. | Copilot Studio, Azure AI Search, Azure OpenAI, Foundry IQ | ✅ Available |
 | [Agentic Workflow Orchestration](./Agentic-Workflow-Orchestration/Agentic-Workflow-Orchestration.md) | Multi-agent workflow orchestration pattern for coordinating complex, multi-step tasks across multiple specialized agents. | Copilot Studio, Azure AI Foundry, Agent Framework | ✅ Available |
 | [GitHub Copilot Harness Execution](./GitHub-Copilot-Harness-Execution/GitHub-Copilot-Harness-Execution.md) | Adaptive planning, knowledge, tools, skills, and Hooks inside Copilot Studio; independent backend authorization, exact-version human approvals, idempotency, and controlled consequential workflows. Includes a separate implementation runbook. | Microsoft Copilot Studio, GitHub Copilot Harness, skills, Hooks, workflows | ✅ Available |
