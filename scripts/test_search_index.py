@@ -5,7 +5,9 @@ from __future__ import annotations
 import json
 from collections import Counter
 from pathlib import Path
+import re
 import subprocess
+import tempfile
 import unittest
 
 
@@ -31,10 +33,9 @@ def build_index() -> list[dict[str, str]]:
 
 
 def read_catalogue() -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]]]:
-    js = (SITE / "assets" / "data.js").read_text(encoding="utf-8")
     script = (
-        js
-        + "\nconsole.log(JSON.stringify({scenarios: SCENARIOS, patterns: PATTERNS, references: REFERENCES}));"
+        "const { readCatalogue } = require('./scripts/build-search-index.js');"
+        "console.log(JSON.stringify(readCatalogue('./docs')));"
     )
     result = subprocess.run(
         ["node", "-e", script],
@@ -47,6 +48,139 @@ def read_catalogue() -> tuple[list[dict[str, object]], list[dict[str, object]], 
 
 
 class SearchIndexTests(unittest.TestCase):
+    def test_catalogue_covers_every_source_folder(self) -> None:
+        build_index()
+        scenarios, patterns, _ = read_catalogue()
+        for folder, items in (("01-scenarios", scenarios), ("02-patterns", patterns)):
+            expected = {entry.name for entry in (SOURCE / folder).iterdir() if entry.is_dir()}
+            ids = [item["id"] for item in items]
+            self.assertEqual(set(ids), expected)
+            self.assertEqual(len(ids), len(set(ids)))
+            for item in items:
+                self.assertTrue(item["title"])
+                self.assertTrue(item["desc"])
+                self.assertTrue(item["status"])
+                self.assertIsInstance(item["tech"], list)
+
+        for item in patterns:
+            self.assertTrue((SOURCE / "02-patterns" / item["file"]).is_file())
+
+        home = (SITE / "index.html").read_text(encoding="utf-8")
+        for name, items in (("scenarios", scenarios), ("patterns", patterns)):
+            count = re.search(rf'id="stat-{name}">(\d+)</div>', home)
+            self.assertIsNotNone(count)
+            self.assertEqual(int(count.group(1)), len(items))
+
+    def test_recent_additions_have_cards_and_search_entries(self) -> None:
+        index = build_index()
+        scenarios, patterns, _ = read_catalogue()
+        for category, items, ids in (
+            ("scenarios", scenarios, (
+                "Compliance-Self-Inspection-Agent",
+                "Contract-Review-GitHub-Copilot-Harness-Agent",
+            )),
+            ("patterns", patterns, ("GitHub-Copilot-Harness-Execution",)),
+        ):
+            cards = {item["id"]: item for item in items}
+            for item_id in ids:
+                self.assertIn(item_id, cards)
+                self.assertTrue(any(
+                    entry["category"] == category and entry["title"] == cards[item_id]["title"]
+                    for entry in index
+                ))
+                self.assertTrue(any(
+                    f"/{item_id}/" in entry["url"] and entry["url"].endswith(".md")
+                    for entry in index
+                ))
+
+    def test_build_is_repeatable(self) -> None:
+        build_index()
+        before = (OUTPUT.read_bytes(), (SITE / "assets" / "data.js").read_bytes())
+        build_index()
+        self.assertEqual(before, (OUTPUT.read_bytes(), (SITE / "assets" / "data.js").read_bytes()))
+
+    def test_new_folders_do_not_require_manual_catalogue_entries(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for folder in ("scripts", "docs/assets", "00-overview", "01-scenarios", "02-patterns", "03-references"):
+                (root / folder).mkdir(parents=True)
+            config = {"scenarios": {}, "patterns": {}, "references": [], "anatomy": []}
+            (root / "scripts/catalogue-config.json").write_text(json.dumps(config), encoding="utf-8")
+            for folder in ("00-overview", "01-scenarios", "02-patterns", "03-references"):
+                (root / folder / "README.md").write_text("# Public documentation\n", encoding="utf-8")
+            for page in ("index", "overview", "scenarios", "patterns", "references", "contribute"):
+                (root / "docs" / f"{page}.html").write_text(
+                    '<main><h1>Public page</h1><div id="stat-scenarios">0</div>'
+                    '<div id="stat-patterns">0</div></main>', encoding="utf-8",
+                )
+            scenario = root / "01-scenarios/Future-Agent"
+            pattern = root / "02-patterns/Future-Pattern"
+            scenario.mkdir()
+            pattern.mkdir()
+            (scenario / "1.Overview.md").write_text(
+                "# Future Agent - Overview\n\n**Scenario Type:** New Business\n"
+                "**Primary Tools:** Copilot Studio, Teams\n**Status:** Draft\n\n"
+                "New scenario with UniqueFutureScenarioEvidence.\n", encoding="utf-8",
+            )
+            (pattern / "Future-Pattern.md").write_text(
+                "# Future Pattern\n\nNew pattern with UniqueFuturePatternEvidence.\n", encoding="utf-8",
+            )
+            script = """
+const assert = require('node:assert/strict');
+const { buildSearchIndex, readCatalogue } = require('./scripts/build-search-index.js');
+const path = require('node:path');
+const root = process.argv[1];
+const result = buildSearchIndex(root);
+const catalogue = readCatalogue(path.join(root, 'docs'));
+assert.equal(catalogue.scenarios.length, 1);
+assert.equal(catalogue.patterns.length, 1);
+assert.equal(catalogue.scenarios[0].title, 'Future Agent');
+assert.equal(catalogue.scenarios[0].type, 'New Business');
+assert.equal(catalogue.scenarios[0].status, 'Draft');
+assert.deepEqual(Array.from(catalogue.scenarios[0].tech), ['Microsoft Copilot Studio', 'Microsoft Teams']);
+assert.equal(catalogue.patterns[0].file, 'Future-Pattern/Future-Pattern.md');
+assert.equal(catalogue.patterns[0].status, 'Documentation Available');
+assert.ok(result.entries.some(item => item.text.includes('UniqueFutureScenarioEvidence')));
+assert.ok(result.entries.some(item => item.text.includes('UniqueFuturePatternEvidence')));
+const fs = require('node:fs');
+const readme = path.join(root, '01-scenarios', 'README.md');
+fs.writeFileSync(readme,
+  '# Scenarios\\n\\n| [Repository Title](./Future-Agent/1.Overview.md) | Updated Business '
+  + '| Updated catalogue description. | Microsoft Copilot Studios | Overview Available |\\n');
+buildSearchIndex(root);
+const updated = readCatalogue(path.join(root, 'docs')).scenarios[0];
+assert.equal(updated.title, 'Repository Title');
+assert.equal(updated.type, 'Updated Business');
+assert.equal(updated.desc, 'Updated catalogue description.');
+assert.equal(updated.status, 'Overview Available');
+assert.equal(updated.tech[0], 'Microsoft Copilot Studio');
+fs.writeFileSync(readme, '# Scenarios\\n');
+fs.rmSync(path.join(root, '01-scenarios', 'Future-Agent'), {recursive: true});
+buildSearchIndex(root);
+assert.equal(readCatalogue(path.join(root, 'docs')).scenarios.length, 0);
+fs.appendFileSync(path.join(root, '01-scenarios', 'README.md'),
+  '\\n| [Missing](./Missing/) | Business | Description | Copilot Studio | Available |\\n');
+assert.throws(() => buildSearchIndex(root), /missing folder/);
+"""
+            subprocess.run(["node", "-e", script, str(root)], cwd=PROJECT, check=True)
+
+    def test_card_links_encode_repository_path_segments(self) -> None:
+        script = """
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const context = vm.createContext({ document: {addEventListener() {}} });
+vm.runInContext(fs.readFileSync('./docs/assets/data.js', 'utf8')
+  + '\\n' + fs.readFileSync('./docs/assets/app.js', 'utf8'), context);
+const card = vm.runInContext("scenarioCard({id:'Agent & #1', title:'Test', type:'Test', "
+  + "icon:'', desc:'Test', tech:[], status:'Available'})", context);
+assert.ok(card.includes('/Agent%20%26%20%231"'));
+const pattern = vm.runInContext("patternCard({file:'Pattern #1/Guide & notes.md', "
+  + "title:'Test', theme:'Test', icon:'', desc:'Test', tech:[], status:'Available'})", context);
+assert.ok(pattern.includes('/Pattern%20%231/Guide%20%26%20notes.md"'));
+"""
+        subprocess.run(["node", "-e", script], cwd=PROJECT, check=True)
+
     def test_markdown_preserves_sections_and_code(self) -> None:
         script = """
 const assert = require('node:assert/strict');
@@ -61,8 +195,8 @@ assert.ok(markdownText('---\\ntitle: hidden metadata\\n---\\nVisible content').i
         subprocess.run(["node", "-e", script], cwd=PROJECT, check=True)
 
     def test_generated_count_matches_public_inputs(self) -> None:
-        scenarios, patterns, references = read_catalogue()
         index = build_index()
+        scenarios, patterns, references = read_catalogue()
         markdown_count = sum(
             1
             for folder in ("00-overview", "01-scenarios", "02-patterns", "03-references")

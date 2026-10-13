@@ -1,0 +1,243 @@
+{
+  "scenarios": {
+    "Compliance-Self-Inspection-Agent": {
+      "icon": "🛡️"
+    },
+    "Contract-Review-GitHub-Copilot-Harness-Agent": {
+      "icon": "⚖️"
+    },
+    "Chief-of-Staff-Cowork-Agent": {
+      "title": "Chief of Staff Cowork Agent",
+      "icon": "🗓️"
+    },
+    "Recurring-Analytics-Cowork-Agent": {
+      "title": "Recurring Analytics Cowork Agent",
+      "icon": "📊"
+    },
+    "Autonomous-Invoice-Orchestration-Agent": {
+      "title": "Autonomous Invoice Orchestration Agent",
+      "icon": "🧾"
+    },
+    "Autonomous-Invoice-Orchestration-Agent-GHCP": {
+      "title": "Autonomous Invoice Orchestration Agent with GHCP Harness",
+      "icon": "🧾"
+    },
+    "Calendar-Request-Approval-Agent": {
+      "title": "Calendar Request Approval Agent",
+      "icon": "📅"
+    },
+    "Copilot-License-Lifecycle-Agent": {
+      "title": "Copilot Licence Lifecycle Agent",
+      "icon": "🎟️"
+    },
+    "Country-Aware-HR-Knowledge-Agent": {
+      "title": "Country-Aware HR Knowledge Agent",
+      "icon": "🧑‍💼"
+    },
+    "CRM-Account-Planning-Cowork-Agent": {
+      "title": "CRM Account Planning Cowork Agent",
+      "icon": "💼"
+    },
+    "Client-Meeting-Preparation-Agent": {
+      "title": "Client Meeting Preparation Agent",
+      "icon": "🤝"
+    },
+    "Contract-and-Legal-Intelligence-Agent": {
+      "title": "Contract & Legal Intelligence Agent",
+      "icon": "⚖️"
+    },
+    "D365-Finance-&-SupplyChain-Compare-and-Copy-Configurations-Agent": {
+      "title": "D365 F&SCM Compare & Copy Configurations Agent",
+      "icon": "⚙️"
+    },
+    "Document-Processing-and-Extraction-Agent": {
+      "title": "Document Processing & Extraction Agent",
+      "icon": "📄"
+    },
+    "Dynamics-365-Monitoring-Agent": {
+      "title": "Dynamics 365 Monitoring Agent",
+      "icon": "🔧"
+    },
+    "Dynamics-365-PO-Generation-Agent": {
+      "title": "Dynamics 365 PO Generation Agent",
+      "icon": "🛒"
+    },
+    "Dynperf-Performance-Agent": {
+      "title": "DynPerf Performance Agent",
+      "icon": "📊"
+    },
+    "ERP-D365-Inventory-Optimization-Agent": {
+      "title": "ERP D365 Inventory Optimization Agent",
+      "icon": "📈"
+    },
+    "Email-and-Mailbox-Triage-Agent": {
+      "title": "Email & Mailbox Triage Agent",
+      "icon": "📬"
+    },
+    "Employee-Self-Service-Agent": {
+      "title": "Employee Self-Service Agent",
+      "icon": "🧑‍💻"
+    },
+    "F&O-User-Onboarding-Agent": {
+      "title": "F&O User Onboarding Agent",
+      "icon": "🪪"
+    },
+    "HR-Onboarding-Agent": {
+      "title": "HR Onboarding Agent",
+      "icon": "🧑‍💼"
+    },
+    "HR-Onboarding-Agent-GHCP": {
+      "title": "HR Onboarding Agent with GHCP Harness",
+      "icon": "🧑‍💼"
+    },
+    "IT-Service-Desk-Insights-Agent": {
+      "title": "IT Service Desk Insights Agent",
+      "icon": "🎫"
+    },
+    "M365-Agent": {
+      "title": "M365 Agent Templates",
+      "icon": "🧩"
+    },
+    "Meeting-Intelligence-Agent": {
+      "title": "Meeting Intelligence Agent",
+      "icon": "🗓️"
+    },
+    "Workplace-Agent": {
+      "title": "Workplace Agent",
+      "icon": "🏢"
+    }
+  },
+  "patterns": {
+    "GitHub-Copilot-Harness-Execution": {
+      "icon": "🧰",
+      "theme": "Architecture & Design"
+    },
+    "Cowork-Skill-Delivery-and-Scheduled-Reviews": {
+      "title": "Cowork Skill Delivery and Scheduled Reviews",
+      "icon": "🔁",
+      "theme": "Delivery & Deployment"
+    },
+    "Governed-Analytics-Review": {
+      "title": "Governed Analytics Review",
+      "icon": "📊",
+      "theme": "Grounding & Knowledge"
+    },
+    "Enterprise-RAG-Pattern": {
+      "title": "Enterprise RAG Pattern",
+      "icon": "🧠",
+      "theme": "Grounding & Knowledge"
+    },
+    "Agentic-Workflow-Orchestration": {
+      "title": "Agentic Workflow Orchestration",
+      "icon": "🔀",
+      "theme": "Architecture & Design"
+    },
+    "Declarative-vs-Custom-engine-agent": {
+      "title": "Declarative vs Custom Engine Agent",
+      "icon": "🧭",
+      "theme": "Architecture & Design"
+    },
+    "Copilot-Connector-Knowledge-Onboarding": {
+      "title": "Copilot Connector Knowledge Onboarding",
+      "icon": "🔌",
+      "theme": "Grounding & Knowledge"
+    },
+    "MCP-Federated-Connectors": {
+      "title": "MCP Federated Connectors",
+      "icon": "🔎",
+      "theme": "Grounding & Knowledge"
+    },
+    "Agent-Governance-and-Rollout-Control-Plane": {
+      "title": "Agent Governance & Rollout Control Plane",
+      "icon": "🛡️",
+      "theme": "Governance & Operations"
+    },
+    "Copilot-Credits-Cost-Control": {
+      "title": "Copilot Credits & Cost Control",
+      "icon": "💳",
+      "theme": "Governance & Operations"
+    },
+    "Grounding-and-Response-Quality-Remediation": {
+      "title": "Grounding & Response Quality Remediation",
+      "icon": "🔬",
+      "theme": "Grounding & Knowledge"
+    },
+    "Agent-Publishing-and-Channel-Deployment": {
+      "title": "Agent Publishing & Channel Deployment",
+      "icon": "🚢",
+      "theme": "Delivery & Deployment"
+    },
+    "MCP-Server-Integration": {
+      "title": "MCP Server Integration",
+      "icon": "🧷",
+      "theme": "Integration"
+    },
+    "Branded-Office-Artifact-Generation": {
+      "title": "Branded Office Artifact Generation",
+      "icon": "🎨",
+      "theme": "Delivery & Deployment"
+    },
+    "Copilot-Studio-Migration-and-Modernisation": {
+      "title": "Copilot Studio Migration & Modernisation",
+      "icon": "🔄",
+      "theme": "Delivery & Deployment"
+    },
+    "Copilot-Studio-and-Foundry-Split-Architecture": {
+      "title": "Copilot Studio & Foundry Split Architecture",
+      "icon": "🧬",
+      "theme": "Architecture & Design"
+    },
+    "Intelligent-Document-Processing-Pipeline": {
+      "title": "Intelligent Document Processing Pipeline",
+      "icon": "📑",
+      "theme": "Integration"
+    },
+    "Human-in-the-Loop-Review-and-Approval": {
+      "title": "Human-in-the-Loop Review & Approval",
+      "icon": "✋",
+      "theme": "Governance & Operations"
+    }
+  },
+  "references": [
+    {
+      "title": "Agent Delivery Reference Library",
+      "icon": "📚",
+      "file": "03-references/Agent-Delivery-Reference-Library.md",
+      "desc": "The curated documentation index for agent delivery — the product docs, learning paths and licensing references worth keeping open during an engagement."
+    },
+    {
+      "title": "Known Limitations & Workarounds",
+      "icon": "🧱",
+      "file": "03-references/Known-Limitations-and-Workarounds.md",
+      "desc": "Field-observed platform constraints and the workarounds that shape design decisions. Read this before you commit an architecture to a customer."
+    },
+    {
+      "title": "Useful Links",
+      "icon": "🔗",
+      "file": "03-references/Useful-links.md",
+      "desc": "Quick-access links to the tooling, portals, samples and community resources used across the runbooks."
+    }
+  ],
+  "anatomy": [
+    {
+      "file": "1.Overview.md",
+      "desc": "Business context, objectives, target users, key capabilities and expected outcomes."
+    },
+    {
+      "file": "2.Architecture.md",
+      "desc": "Solution architecture diagrams, technology stack, integration points and data flow."
+    },
+    {
+      "file": "3.Runbook.md",
+      "desc": "Step-by-step implementation covering configuration, development, testing and deployment."
+    },
+    {
+      "file": "4.Sample-prompts.md",
+      "desc": "Prompt examples, expected behaviour and validation status for topics, trigger phrases and conversation flows."
+    },
+    {
+      "file": "0.Resources/",
+      "desc": "Supporting assets — images, diagrams and reference files used within the scenario."
+    }
+  ]
+}

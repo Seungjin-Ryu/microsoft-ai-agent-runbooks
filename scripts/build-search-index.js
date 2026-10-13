@@ -71,6 +71,181 @@ function readCatalogue(docsDir) {
   };
 }
 
+function catalogueText(value) {
+  return markdownText(String(value || "").replace(/<[^>]+>/g, " "))
+    .replace(/\*\*|__/g, "")
+    .trim();
+}
+
+function readSourceTable(directory, category) {
+  const source = fs.readFileSync(path.join(directory, "README.md"), "utf8");
+  const rows = new Map();
+  source.split(/\r?\n/).forEach(function (line) {
+    if (!line.trim().startsWith("|")) return;
+    const cells = line.trim().replace(/^\||\|$/g, "").split(/(?<!\\)\|/)
+      .map(function (cell) { return cell.trim().replace(/\\\|/g, "|"); });
+    const link = cells[0].match(/^\[([^\]]+)\]\(\.\/([^)]+)\)$/);
+    if (!link) return;
+    const expected = category === "scenarios" ? 5 : 4;
+    if (cells.length !== expected) {
+      throw new BuildError("Invalid catalogue table row in " + directory + ": " + line);
+    }
+    const relativePath = decodeURIComponent(link[2]).replace(/\/$/, "");
+    const id = relativePath.split("/")[0];
+    if (rows.has(id)) throw new BuildError("Duplicate catalogue table entry: " + id);
+    rows.set(id, {
+      title: catalogueText(link[1]),
+      source: relativePath,
+      type: category === "scenarios" ? catalogueText(cells[1]) : "",
+      desc: catalogueText(cells[category === "scenarios" ? 2 : 1].split(/<br\s*\/?>/i)[0]),
+      tech: cells[category === "scenarios" ? 3 : 2],
+      status: catalogueText(cells[expected - 1]).replace(/^[^\p{L}\p{N}]+/u, "")
+    });
+  });
+  return rows;
+}
+
+function catalogueTechnologies(value) {
+  const aliases = {
+    "Copilot Studio": "Microsoft Copilot Studio",
+    "Microsoft Copilot Studios": "Microsoft Copilot Studio",
+    "Azure AI Foundry": "Microsoft Foundry",
+    "Copilot Cowork": "Microsoft 365 Copilot Cowork",
+    "Cowork": "Microsoft 365 Copilot Cowork",
+    "Teams": "Microsoft Teams",
+    "MCP": "MCP Server",
+    "MCP server": "MCP Server",
+    "Model Context Protocol": "MCP Server",
+    "Dynamics 365 ERP MCP Server": "MCP Server",
+    "Copilot connectors": "Copilot Connectors",
+    "Microsoft 365 Copilot connectors": "Copilot Connectors",
+    "GitHub Copilot Harness": "GitHub Copilot harness",
+    "Microsoft 365 Agents Toolkit": "Agents Toolkit",
+    "Microsoft Graph semantic index": "Microsoft Graph",
+    "SharePoint Organization Asset Library": "Organization Asset Library",
+    "Azure subscription": "Azure",
+    "Azure AD": "Microsoft Entra ID",
+    "Entra SSO": "Microsoft Entra",
+    "ServiceNow knowledge": "ServiceNow",
+    "skills": "Skills",
+    "plugins": "Plugins",
+    "workflows": "Workflows",
+    "controlled workflows": "Workflows"
+  };
+  const technologies = catalogueText(value)
+    .replace(/\(([^)]*)\)/g, function (_, detail) { return detail.includes("/") ? ", " + detail : ""; })
+    .split(/,|\s+\/\s+|\s+or\s+/)
+    .flatMap(function (technology) {
+      const label = technology.trim();
+      if (/^ServiceNow.*Copilot Connector/i.test(label)) return ["ServiceNow", "Copilot Connectors"];
+      if (label === "Power Automate approvals") return ["Power Automate", "Approvals"];
+      return label ? [aliases[label] || label] : [];
+    });
+  return Array.from(new Set(technologies));
+}
+
+function overviewProperty(markdown, names) {
+  for (const name of names) {
+    const table = markdown.split(/\r?\n/).find(function (line) {
+      return line.startsWith("|") && catalogueText(line.split("|")[1]) === name;
+    });
+    if (table) return catalogueText(table.split("|")[2]);
+    const field = markdown.match(new RegExp("^\\*\\*" + name + ":\\*\\*\\s*(.+)$", "m"));
+    if (field) return catalogueText(field[1]);
+  }
+  return "";
+}
+
+function overviewDescription(markdown) {
+  const paragraph = markdown.split(/\r?\n\s*\r?\n/).find(function (part) {
+    return part.trim() && !/^\s*(?:#|\||```|---|!\[|>\s|\*\*[^*]+:\*\*)/.test(part);
+  });
+  return catalogueText(paragraph);
+}
+
+function buildCatalogue(projectDir) {
+  const rootDir = projectDir || path.resolve(__dirname, "..");
+  const config = JSON.parse(fs.readFileSync(path.join(rootDir, "scripts", "catalogue-config.json"), "utf8"));
+  const groups = [
+    { folder: "01-scenarios", category: "scenarios" },
+    { folder: "02-patterns", category: "patterns" }
+  ];
+  const catalogue = {};
+  groups.forEach(function (group) {
+    const directory = path.join(rootDir, group.folder);
+    const table = readSourceTable(directory, group.category);
+    const display = config[group.category];
+    const folders = fs.readdirSync(directory, { withFileTypes: true })
+      .filter(function (entry) { return entry.isDirectory(); }).map(function (entry) { return entry.name; }).sort();
+    table.forEach(function (_, id) {
+      if (!folders.includes(id)) throw new BuildError("Catalogue table points to a missing folder: " + group.folder + "/" + id);
+    });
+    const ordered = Object.keys(display).filter(function (id) { return folders.includes(id); })
+      .concat(folders.filter(function (id) { return !Object.hasOwn(display, id); }));
+    catalogue[group.category] = ordered.map(function (id) {
+      const row = table.get(id);
+      const presentation = display[id] || {};
+      const itemDir = path.join(directory, id);
+      const files = fs.readdirSync(itemDir).filter(function (file) { return /\.md$/i.test(file); }).sort();
+      let file;
+      if (group.category === "scenarios") {
+        file = ["1.Overview.md", "README.md"].find(function (name) { return files.includes(name); })
+          || files.find(function (name) { return /Overview\.md$/i.test(name); }) || files[0];
+      } else if (row && /\.md$/i.test(row.source)) {
+        file = row.source.slice(id.length + 1);
+      } else {
+        file = [id + ".md", "README.md"].find(function (name) { return files.includes(name); });
+        if (!file) {
+          const candidates = files.filter(function (name) { return !/-Runbook\.md$/i.test(name); });
+          if (candidates.length === 1) file = candidates[0];
+        }
+      }
+      if (!file) throw new BuildError("Cannot identify overview document for " + group.folder + "/" + id);
+      const overviewPath = path.resolve(itemDir, file);
+      if (!overviewPath.startsWith(itemDir + path.sep)) throw new BuildError("Overview path escapes its folder: " + file);
+      ensureExists(overviewPath, "Missing overview document: " + overviewPath);
+      const markdown = fs.readFileSync(overviewPath, "utf8");
+      const title = presentation.title || (row && row.title !== id ? row.title : "")
+        || catalogueText(findHeading(markdown)).replace(/\s+[-\u2013\u2014]\s+Overview$/i, "") || humanize(id);
+      const desc = row ? row.desc : overviewDescription(markdown);
+      if (!desc) throw new BuildError("Missing catalogue description for " + id);
+      const item = {
+        id: id,
+        title: title,
+        icon: presentation.icon || (group.category === "scenarios" ? "\uD83E\uDD16" : "\uD83E\uDDE9"),
+        desc: desc,
+        tech: catalogueTechnologies(row ? row.tech : overviewProperty(markdown, ["Primary Tools", "Platform", "Key Technologies"])),
+        status: row ? row.status : (overviewProperty(markdown, ["Status"]) || "Documentation Available")
+      };
+      if (!item.status) throw new BuildError("Missing catalogue status for " + id);
+      if (group.category === "scenarios") {
+        item.type = row ? row.type : (overviewProperty(markdown, ["Scenario Type"]) || "Agent Scenario");
+      } else {
+        item.file = id + "/" + file.split(path.sep).join("/");
+        item.theme = presentation.theme || "Architecture & Design";
+      }
+      return item;
+    });
+  });
+  catalogue.references = config.references;
+  const output = "/* Generated by scripts/build-search-index.js. Do not edit; source folders and README tables define coverage. */\n\n"
+    + "const REPO = " + JSON.stringify(REPOSITORY) + ";\n"
+    + 'const TREE = REPO + "/tree/main";\n'
+    + 'const BLOB = REPO + "/blob/main";\n\n'
+    + "const SCENARIOS = " + JSON.stringify(catalogue.scenarios, null, 2) + ";\n\n"
+    + "const PATTERNS = " + JSON.stringify(catalogue.patterns, null, 2) + ";\n\n"
+    + "const REFERENCES = " + JSON.stringify(config.references, null, 2) + ";\n\n"
+    + "const RUNBOOK_ANATOMY = " + JSON.stringify(config.anatomy, null, 2) + ";\n";
+  validateRequiredSource(rootDir, catalogue);
+  fs.writeFileSync(path.join(rootDir, "docs", "assets", "data.js"), output, "utf8");
+  const homePath = path.join(rootDir, "docs", "index.html");
+  const home = fs.readFileSync(homePath, "utf8");
+  const updated = home.replace(/(id="stat-scenarios">)\d+(<\/div>)/, "$1" + catalogue.scenarios.length + "$2")
+    .replace(/(id="stat-patterns">)\d+(<\/div>)/, "$1" + catalogue.patterns.length + "$2");
+  if (home !== updated) fs.writeFileSync(homePath, updated, "utf8");
+  return catalogue;
+}
+
 function stripBlock(html, tagName) {
   return html.replace(new RegExp("<" + tagName + "\\b[^>]*>[\\s\\S]*?<\\/" + tagName + ">", "gi"), " ");
 }
@@ -269,7 +444,7 @@ function buildSearchIndex(projectDir) {
   const sourceDir = rootDir;
   ensureExists(docsDir, "Missing required docs folder.");
   ensureExists(sourceDir, "Missing required public repository source.");
-  const catalogue = readCatalogue(docsDir);
+  const catalogue = buildCatalogue(rootDir);
   validateRequiredSource(sourceDir, catalogue);
 
   const entries = []
@@ -311,7 +486,9 @@ module.exports = {
   MAX_INDEX_BYTES,
   REPOSITORY,
   SITE_PAGES,
+  buildCatalogue,
   buildSearchIndex,
+  catalogueTechnologies,
   collectMarkdownFiles,
   htmlText,
   markdownText,

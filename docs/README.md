@@ -16,7 +16,7 @@ docs/
 ├── contribute.html     → Contribution shapes, file standards, naming rules, CLA
 ├── .nojekyll           → Tells GitHub Pages to serve the files as-is
 └── assets/
-    ├── data.js         → ★ Single source of truth for all catalogue content
+    ├── data.js         → Generated scenario/pattern catalogue and reference metadata
     ├── styles.css      → Design system (Microsoft 365 Copilot visual language)
     └── app.js          → Theme, navigation, search/filter engine, card rendering
 ```
@@ -37,37 +37,28 @@ keyboard-operable controls, visible focus states, and `prefers-reduced-motion` s
 
 ## Adding content
 
-Everything the site displays comes from `docs/assets/data.js` — nothing is hard-coded in the HTML.
-When a new scenario or pattern lands in the repository, add one object:
+`scripts/build-search-index.js` generates `docs/assets/data.js` from every scenario and pattern
+folder in the same repository commit. Do not edit the generated file.
 
-```js
-// SCENARIOS — id must match the folder name under 01-scenarios/
-{
-  id: "My-New-Agent",
-  title: "My New Agent",
-  type: "Business area / function",
-  icon: "🤖",
-  desc: "One or two sentences on what it does and what makes it non-obvious.",
-  tech: ["Microsoft Copilot Studio", "Power Automate"],
-  status: "Available"
-}
+Add the scenario's `1.Overview.md` or the pattern's `[FolderName].md`, and update the corresponding
+README catalogue table. Those tables supply descriptions, scenario types, technologies and
+documentation availability. Common platform names are normalized for consistent filters.
+Even before a README row is added, a new folder is included using its overview heading, introductory
+paragraph and available metadata; absence of a status is shown as **Documentation Available**,
+not as an assertion that the agent has been deployed.
 
-// PATTERNS — file must match the path under 02-patterns/
-{
-  id: "My-New-Pattern",
-  file: "My-New-Pattern/My-New-Pattern.md",
-  title: "My New Pattern",
-  icon: "🧩",
-  theme: "Architecture & Design",   // drives the filter chips
-  desc: "What decision this pattern settles.",
-  tech: ["Microsoft Copilot Studio"],
-  status: "Available"
-}
-```
+`scripts/catalogue-config.json` holds optional display titles, icons and pattern themes, plus the
+reference library and runbook anatomy. Existing display order is preserved; new folders without a
+display override are appended alphabetically. Adding a display override is optional, not a
+prerequisite for appearing on the website.
 
-Filter chips, search, result counts and the homepage statistics all regenerate automatically.
-Keep `tech` values spelled consistently — the platform filters are derived from them, and only
-values used by more than one item become chips.
+Missing source documents, ambiguous pattern entry points and README rows pointing to missing
+folders stop the build rather than publishing incomplete or broken cards. Remove a deleted
+folder's README row too; unused display overrides do not create phantom cards.
+
+Filter chips, search entries, result counts and homepage statistics regenerate together.
+Cards open the public source folders or documents; global search also includes nested Markdown,
+including the individual Microsoft 365 agent-template overviews.
 
 ## Site-wide search
 
@@ -86,9 +77,9 @@ node scripts\build-search-index.js
 python scripts\test_search_index.py
 ```
 
-The Pages workflow rebuilds the index from the same commit it deploys. Changes to any of
+The Pages workflow rebuilds both the catalogue and index from the same commit it deploys. Changes to any of
 those source folders, `docs/`, or `scripts/` trigger deployment. New source documents are
-searchable automatically; adding catalogue cards still requires an entry in `data.js`.
+searchable automatically and appear in the catalogue without manually editing `data.js`.
 
 ## Deploying to GitHub Pages
 

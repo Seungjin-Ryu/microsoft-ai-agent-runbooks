@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build and validate search index
+      - name: Build and validate catalogue and search index
         run: |
           node scripts/build-search-index.js
           python3 scripts/test_search_index.py

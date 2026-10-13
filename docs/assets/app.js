@@ -37,6 +37,10 @@ function esc(s) {
   });
 }
 
+function encodeRepoPath(value) {
+  return value.split("/").map(encodeURIComponent).join("/");
+}
+
 function tagRow(tech, max) {
   const shown = tech.slice(0, max);
   let html = shown.map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("");
@@ -87,7 +91,7 @@ function snippetFromText(text, query) {
 /* ---------- card renderers ---------- */
 function scenarioCard(s) {
   return (
-    '<a class="card" href="' + TREE + "/01-scenarios/" + encodeURI(s.id) + '" target="_blank" rel="noopener">' +
+    '<a class="card" href="' + esc(TREE + "/01-scenarios/" + encodeRepoPath(s.id)) + '" target="_blank" rel="noopener">' +
     '<div class="card-icon" aria-hidden="true">' + s.icon + "</div>" +
     "<h3>" + esc(s.title) + "</h3>" +
     '<div class="type">' + esc(s.type) + "</div>" +
@@ -99,7 +103,7 @@ function scenarioCard(s) {
 
 function patternCard(p) {
   return (
-    '<a class="card" href="' + BLOB + "/02-patterns/" + encodeURI(p.file) + '" target="_blank" rel="noopener">' +
+    '<a class="card" href="' + esc(BLOB + "/02-patterns/" + encodeRepoPath(p.file)) + '" target="_blank" rel="noopener">' +
     '<div class="card-icon" aria-hidden="true">' + p.icon + "</div>" +
     "<h3>" + esc(p.title) + "</h3>" +
     '<div class="type">' + esc(p.theme) + "</div>" +
