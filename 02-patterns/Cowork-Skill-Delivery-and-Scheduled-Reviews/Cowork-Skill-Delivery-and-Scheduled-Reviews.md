@@ -101,7 +101,8 @@ results. Inventory schedules to prevent duplicates and orphaned recurring jobs. 
 before rollback; restore an approved package/reference version and revalidate in a new session.
 Revoke sharing through supported controls and verify what happens to existing installations.
 
-Use current **Cowork-specific** licensing, metering, budget/limit and reporting guidance.
+Use current **Cowork-specific** licensing, metering, budget/limit and reporting guidance
+(see [Cowork Spending Policies and Cost Governance](../Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md)).
 Do not copy Copilot Studio credit rates, thresholds or environment-enforcement assumptions.
 Where available, `/cost` is an approximate user signal, not billing truth. Reconcile with
 official administrative/billing reporting; measure preparation **plus review** and cost.
