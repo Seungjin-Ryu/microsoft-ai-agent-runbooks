@@ -79,7 +79,12 @@ class SearchIndexTests(unittest.TestCase):
                 "Compliance-Self-Inspection-Agent",
                 "Contract-Review-GitHub-Copilot-Harness-Agent",
             )),
-            ("patterns", patterns, ("GitHub-Copilot-Harness-Execution",)),
+            ("patterns", patterns, (
+                "GitHub-Copilot-Harness-Execution",
+                "Cowork-Enablement",
+                "Cowork-Spending-Policies-and-Cost-Governance",
+                "Pilot-to-Scale-Validation-Gates",
+            )),
         ):
             cards = {item["id"]: item for item in items}
             for item_id in ids:
@@ -92,6 +97,26 @@ class SearchIndexTests(unittest.TestCase):
                     f"/{item_id}/" in entry["url"] and entry["url"].endswith(".md")
                     for entry in index
                 ))
+
+    def test_cowork_enablement_is_only_a_pattern(self) -> None:
+        index = build_index()
+        scenarios, patterns, _ = read_catalogue()
+        self.assertNotIn("Cowork-Enablement-Pilot", {item["id"] for item in scenarios})
+        self.assertNotIn("Cowork-Enablement", {item["id"] for item in scenarios})
+        self.assertFalse((SOURCE / "01-scenarios" / "Cowork-Enablement-Pilot").exists())
+        self.assertFalse(any("Cowork-Enablement-Pilot" in entry["url"] for entry in index))
+        cards = {item["id"]: item for item in patterns}
+        self.assertEqual(cards["Cowork-Enablement"]["theme"], "Delivery & Deployment")
+        self.assertEqual(
+            cards["Cowork-Spending-Policies-and-Cost-Governance"]["theme"],
+            "Governance & Operations",
+        )
+        self.assertEqual(cards["Pilot-to-Scale-Validation-Gates"]["theme"], "Delivery & Deployment")
+        self.assertTrue(any(
+            entry["category"] == "patterns"
+            and "/Cowork-Enablement/Cowork-Enablement-Runbook.md" in entry["url"]
+            for entry in index
+        ))
 
     def test_build_is_repeatable(self) -> None:
         build_index()

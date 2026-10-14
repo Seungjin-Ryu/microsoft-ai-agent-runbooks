@@ -122,6 +122,21 @@
       "icon": "📊",
       "theme": "Grounding & Knowledge"
     },
+    "Cowork-Enablement": {
+      "title": "Cowork Enablement",
+      "icon": "🚀",
+      "theme": "Delivery & Deployment"
+    },
+    "Cowork-Spending-Policies-and-Cost-Governance": {
+      "title": "Cowork Spending Policies and Cost Governance",
+      "icon": "🧾",
+      "theme": "Governance & Operations"
+    },
+    "Pilot-to-Scale-Validation-Gates": {
+      "title": "Pilot-to-Scale Validation Gates",
+      "icon": "🚦",
+      "theme": "Delivery & Deployment"
+    },
     "Enterprise-RAG-Pattern": {
       "title": "Enterprise RAG Pattern",
       "icon": "🧠",

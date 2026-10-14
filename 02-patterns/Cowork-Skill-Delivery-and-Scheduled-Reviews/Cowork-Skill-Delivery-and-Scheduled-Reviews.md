@@ -131,6 +131,8 @@ Follow the [implementation runbook](Cowork-Skill-Delivery-and-Scheduled-Reviews-
 
 ## Related Patterns and References
 
+- [Cowork Enablement](../Cowork-Enablement/Cowork-Enablement.md) - tenant, governance, billing and shared platform validation before accepting a skill workflow
+- [Pilot-to-Scale Validation Gates](../Pilot-to-Scale-Validation-Gates/Pilot-to-Scale-Validation-Gates.md) - expansion after platform and scenario acceptance
 - [Agent Governance and Rollout Control Plane](../Agent-Governance-and-Rollout-Control-Plane/Agent-Governance-and-Rollout-Control-Plane.md)
 - [Human-in-the-Loop Review and Approval](../Human-in-the-Loop-Review-and-Approval/Human-in-the-Loop-Review-and-Approval.md)
 - [Grounding and Response Quality Remediation](../Grounding-and-Response-Quality-Remediation/Grounding-and-Response-Quality-Remediation.md)

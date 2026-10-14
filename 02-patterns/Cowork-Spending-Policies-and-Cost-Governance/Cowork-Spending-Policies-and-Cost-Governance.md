@@ -196,7 +196,10 @@ These are illustrative situations to design against, not reported customer outco
 - [Pilot-to-Scale Validation Gates](../Pilot-to-Scale-Validation-Gates/Pilot-to-Scale-Validation-Gates.md) - the decision these controls feed
 - [Agent Governance and Rollout Control Plane](../Agent-Governance-and-Rollout-Control-Plane/Agent-Governance-and-Rollout-Control-Plane.md)
 - [Cowork Skill Delivery and Scheduled Reviews](../Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md) - scheduled prompts raise consumption
-- Scenario: [Cowork Enablement Pilot](../../01-scenarios/Cowork-Enablement-Pilot/1.Overview.md)
+- [Cowork Enablement](../Cowork-Enablement/Cowork-Enablement.md) - shared tenant readiness and operational acceptance
+- Scenario: [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md) - leader cohort, weekly preparation and cost review
+- Scenario: [Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md) - recurring review intensity and function/cohort attribution
+- Scenario: [CRM Account Planning](../../01-scenarios/CRM-Account-Planning-Cowork-Agent/1.Overview.md) - seller cohort, artifact-generation costs and separately funded MCP hosting
 
 ---
 
