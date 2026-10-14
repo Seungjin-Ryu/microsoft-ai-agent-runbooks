@@ -443,7 +443,7 @@ const PATTERNS = [
     "id": "Cowork-Enablement",
     "title": "Cowork Enablement",
     "icon": "🚀",
-    "desc": "Shared tenant readiness, security, governance, billing and operational handover for Cowork. A 24-step runbook, platform acceptance tests and evidence templates applied within business scenarios, not a separate use case.",
+    "desc": "Shared tenant readiness, security, governance, billing and operational handover for Cowork. Includes a 24-step runbook, platform acceptance tests and evidence templates; apply within business scenarios.",
     "tech": [
       "Microsoft 365 Copilot Cowork",
       "Microsoft 365 admin center",
@@ -457,10 +457,10 @@ const PATTERNS = [
     "id": "Cowork-Spending-Policies-and-Cost-Governance",
     "title": "Cowork Spending Policies and Cost Governance",
     "icon": "🧾",
-    "desc": "Copilot Credit spending policies for Cowork: discovery, group scoping, policy and per-user limits, precedence, billing methods, alerts and reconciliation. Distinct from the Copilot Studio credits pattern.",
+    "desc": "Copilot Credit spending policies for Cowork: discovery, group scoping, policy and per-user limits, precedence, Auto-apply new services, alerts, billing methods, /cost limits and reconciliation. Distinct from the Copilot Studio credits pattern.",
     "tech": [
+      "Microsoft 365 admin center Cost Management",
       "Microsoft 365 Copilot Cowork",
-      "Microsoft 365 admin center",
       "Azure Cost Management"
     ],
     "status": "Available",
@@ -471,7 +471,7 @@ const PATTERNS = [
     "id": "Pilot-to-Scale-Validation-Gates",
     "title": "Pilot-to-Scale Validation Gates",
     "icon": "🚦",
-    "desc": "Evidence-gated progression from pilot to scale: signed boundary, control posture, verification tests, success criteria, ownership matrix and a recorded expand, extend, pause or stop decision.",
+    "desc": "Evidence-gated progression from pilot to scale: signed boundary, readiness and control gates, verification tests, success criteria, ownership matrix and an expand, extend, pause or stop decision.",
     "tech": [
       "Microsoft 365 Copilot Cowork",
       "Microsoft 365 admin center"
