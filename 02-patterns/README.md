@@ -49,6 +49,9 @@ The `02-patterns/` folder contains one subfolder per supported technical pattern
 ├── Copilot-Studio-and-Foundry-Split-Architecture/                    ← ✅ Available
 │   ├── Copilot-Studio-and-Foundry-Split-Architecture.md
 │   └── Copilot-Studio-and-Foundry-Split-Architecture-Runbook.md
+├── Cowork-Enablement/                                               ← ✅ Available
+│   ├── Cowork-Enablement.md
+│   └── Cowork-Enablement-Runbook.md
 ├── Cowork-Skill-Delivery-and-Scheduled-Reviews/                      ← ✅ Available
 │   ├── Cowork-Skill-Delivery-and-Scheduled-Reviews.md
 │   └── Cowork-Skill-Delivery-and-Scheduled-Reviews-Runbook.md
@@ -163,6 +166,7 @@ Step 6. Cross-reference 01-scenarios/ → apply the pattern within the scenario 
 
 | Pattern | Description | Key Technologies | Status |
 |---------|-------------|------------------|--------|
+| [Cowork Enablement](./Cowork-Enablement/Cowork-Enablement.md) | Shared tenant readiness, security, governance, billing and operational handover for Cowork. Includes a 24-step runbook, platform acceptance tests and evidence templates; apply within business scenarios. | Microsoft 365 Copilot Cowork, Microsoft 365 admin center, Azure Cost Management | ✅ Available |
 | [Cowork Skill Delivery and Scheduled Reviews](./Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md) | Configuration-first skill/reference lifecycle, routing, trusted packages, controlled sharing, on-demand acceptance, optional user-owned scheduled drafts, cost and rollback. | Microsoft 365 Copilot Cowork, OneDrive, skills, plugins | ✅ Available |
 | [Governed Analytics Review](./Governed-Analytics-Review/Governed-Analytics-Review.md) | Explicit source/KPI contracts, period/filter/units reconciliation, RLS, supported explanations and consistent narrative/dashboard outputs with independent artifact-access review. | Power BI, Microsoft Fabric, Excel Online, Microsoft 365 Copilot Cowork | ✅ Available |
 | [Cowork Spending Policies and Cost Governance](./Cowork-Spending-Policies-and-Cost-Governance/Cowork-Spending-Policies-and-Cost-Governance.md) | Copilot Credit spending policies for Cowork: discovery, group scoping, policy and per-user limits, precedence, Auto-apply new services, alerts, billing methods, `/cost` limits and reconciliation. Distinct from the Copilot Studio credits pattern. | Microsoft 365 admin center Cost Management, Microsoft 365 Copilot Cowork, Azure Cost Management | ✅ Available |

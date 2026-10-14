@@ -77,12 +77,6 @@ Each scenario folder is self-contained and follows a standardized structure so t
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
 │   └── 4.Sample-prompts.md
-├── 📂 Cowork-Enablement-Pilot/            ← ✅ Available
-│   ├── 📂 0.Resources/
-│   ├── 1.Overview.md
-│   ├── 2.Architecture.md
-│   ├── 3.Runbook.md
-│   └── 4.Sample-prompts.md
 ├── 📂 Client-Meeting-Preparation-Agent/    ← ✅ Available
 │   ├── 📂 0.Resources/
 │   ├── 1.Overview.md
@@ -217,11 +211,15 @@ For the two configuration-first Cowork scenarios below, **Available** means the 
 and starter archives are available in each scenario's resource folder. Tenant deployment and
 acceptance are not implied; review package-specific prerequisites before installation.
 
+Apply the [Cowork Enablement pattern](../02-patterns/Cowork-Enablement/Cowork-Enablement.md)
+within Chief of Staff, Recurring Analytics and CRM Account Planning. Tenant enablement is
+shared delivery guidance, not an additional business scenario.
+
 | Scenario | Type | Description | Platform | Status |
 |----------|------|-------------|----------|--------|
 | [Chief-of-Staff-Cowork-Agent](./Chief-of-Staff-Cowork-Agent/) | Leadership Productivity / Executive Readiness | Five configured skills for weekly briefs, executive drafts, leadership packs and observable team-work digests; draft-first approvals, people safety and optional recurring preparation. | Microsoft 365 Copilot Cowork, Outlook, Teams, SharePoint, OneDrive | ✅ Available |
 | [Recurring-Analytics-Cowork-Agent](./Recurring-Analytics-Cowork-Agent/) | Business Analytics / Recurring Reviews | Six configured skills: one router and five consolidated Sales, Finance, Retail, Manufacturing and Service reviews from approved sources; KPI reconciliation, RLS, Markdown and HTML outputs. | Microsoft 365 Copilot Cowork, Power BI, Microsoft Fabric, Excel Online | ✅ Available |
-| [Cowork-Enablement-Pilot](./Cowork-Enablement-Pilot/) | Platform Enablement / Governance / Cost Control | Repeatable process to enable Cowork for a bounded pilot: readiness, security and governance review, Copilot Credit spending policies, functional and approval testing, operational handoff and an expand/extend/pause/stop decision. No custom build; foundation for the Cowork use-case scenarios. | Microsoft 365 Copilot Cowork, Microsoft 365 admin center (Cost Management), Azure Cost Management | ✅ Available || [Calendar Request Approval Agent](./Calendar-Request-Approval-Agent/1.Overview.md) | Workforce Productivity / Approvals | Confirm calendar requests, enforce request-type authorization and approval policy, and publish to SharePoint and an explicitly authorized Outlook calendar. Includes production recovery guidance. | Microsoft Copilot Studio, Power Automate, SharePoint, Office 365 Outlook | ✅ Available |
+| [Calendar Request Approval Agent](./Calendar-Request-Approval-Agent/1.Overview.md) | Workforce Productivity / Approvals | Confirm calendar requests, enforce request-type authorization and approval policy, and publish to SharePoint and an explicitly authorized Outlook calendar. Includes production recovery guidance. | Microsoft Copilot Studio, Power Automate, SharePoint, Office 365 Outlook | ✅ Available |
 | [Country-Aware HR Knowledge Agent](./Country-Aware-HR-Knowledge-Agent/1.Overview.md) | HR Knowledge / Governed Retrieval | Country-scoped SharePoint knowledge with organization-wide and optional restricted lanes, custom ingestion, authenticated retrieval, ACL freshness, and permission-aware access. | Microsoft Copilot Studio, Microsoft Graph, Azure AI Search, Azure OpenAI, SharePoint | ✅ Available |
 | [Autonomous-Invoice-Orchestration-Ageny](./Autonomous-Invoice-Orchestration-Agent/) | Payment Approval Automation | Automates the payment request and approval process.| Microsoft Copilot Studios, Power Automate|✅ Available |
 | [Autonomous Invoice Orchestration Agent with GHCP Harness](./Autonomous-Invoice-Orchestration-Agent-GHCP/1.Overview.md) | Accounts Payable / Invoice Approval | Email-triggered PDF invoice extraction into Dataverse and a JSON review file, then approval or Finance review, using one skill and two Workflows flows. Implementation and tenant validation are required. | Microsoft Copilot Studio, GitHub Copilot harness, Workflows, Outlook, SharePoint, Dataverse, Approvals | ✅ Available |

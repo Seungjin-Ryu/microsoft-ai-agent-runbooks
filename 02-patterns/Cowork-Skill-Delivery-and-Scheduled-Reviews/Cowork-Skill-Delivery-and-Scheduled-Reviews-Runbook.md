@@ -5,6 +5,10 @@ scenario's skill-specific acceptance tests.
 
 ## 1. Readiness Gate
 
+Use the [Cowork Enablement runbook](../Cowork-Enablement/Cowork-Enablement-Runbook.md) for
+shared tenant setup, security, billing and platform test evidence. Reuse accepted evidence
+where current; the checklist below adds the workflow's skill and actual source-access gates.
+
 | Check | Evidence and owner |
 |---|---|
 | Cowork available to pilot users on supported surface | Tenant administrator demonstrates a session |

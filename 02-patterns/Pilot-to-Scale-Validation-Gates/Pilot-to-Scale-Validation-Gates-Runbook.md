@@ -75,7 +75,8 @@ audit and retention, and agent governance.
 1. Run the verification checklist: access, prompt, attachment, output file, approval card,
    cancel, messaging, calendar, history, policy boundary, billing visibility.
 2. Run the functional tests (for Cowork, see the
-   [scenario tests](../../01-scenarios/Cowork-Enablement-Pilot/4.Sample-prompts.md)).
+   [shared enablement tests](../Cowork-Enablement/Cowork-Enablement-Runbook.md#functional-tests-and-prompts))
+   as well as the chosen business scenario's acceptance tests.
 3. Ask each user to complete at least two approved scenarios; capture quality, time saved,
    concerns and failed steps.
 4. Review results with sponsor, IT, security, billing and adoption leads.

@@ -66,19 +66,6 @@ const SCENARIOS = [
     "type": "Business Analytics / Recurring Reviews"
   },
   {
-    "id": "Cowork-Enablement-Pilot",
-    "title": "Cowork Enablement Pilot",
-    "icon": "🚀",
-    "desc": "Repeatable process to enable Microsoft 365 Copilot Cowork for a bounded pilot: readiness, security and governance review, Copilot Credit spending policies, functional and approval testing, operational handoff and an expand, extend, pause or stop decision.",
-    "tech": [
-      "Microsoft 365 Copilot Cowork",
-      "Microsoft 365 admin center",
-      "Azure Cost Management"
-    ],
-    "status": "Available",
-    "type": "Platform Enablement / Governance"
-  },
-  {
     "id": "Autonomous-Invoice-Orchestration-Agent",
     "title": "Autonomous Invoice Orchestration Agent",
     "icon": "🧾",
@@ -451,6 +438,20 @@ const PATTERNS = [
     "status": "Available",
     "file": "Governed-Analytics-Review/Governed-Analytics-Review.md",
     "theme": "Grounding & Knowledge"
+  },
+  {
+    "id": "Cowork-Enablement",
+    "title": "Cowork Enablement",
+    "icon": "🚀",
+    "desc": "Shared tenant readiness, security, governance, billing and operational handover for Cowork. A 24-step runbook, platform acceptance tests and evidence templates applied within business scenarios, not a separate use case.",
+    "tech": [
+      "Microsoft 365 Copilot Cowork",
+      "Microsoft 365 admin center",
+      "Azure Cost Management"
+    ],
+    "status": "Available",
+    "file": "Cowork-Enablement/Cowork-Enablement.md",
+    "theme": "Delivery & Deployment"
   },
   {
     "id": "Cowork-Spending-Policies-and-Cost-Governance",

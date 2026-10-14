@@ -167,7 +167,10 @@ These are illustrative situations to design against, not reported customer outco
 - [Agent Governance and Rollout Control Plane](../Agent-Governance-and-Rollout-Control-Plane/Agent-Governance-and-Rollout-Control-Plane.md)
 - [Human-in-the-Loop Review and Approval](../Human-in-the-Loop-Review-and-Approval/Human-in-the-Loop-Review-and-Approval.md) - verifying approval behaviour
 - [Cowork Skill Delivery and Scheduled Reviews](../Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md)
-- Scenario: [Cowork Enablement Pilot](../../01-scenarios/Cowork-Enablement-Pilot/1.Overview.md)
+- [Cowork Enablement](../Cowork-Enablement/Cowork-Enablement.md) - platform readiness and shared acceptance tests
+- Scenario: [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md) - people safety and leader/delegate acceptance
+- Scenario: [Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md) - KPI and access acceptance per business function
+- Scenario: [CRM Account Planning](../../01-scenarios/CRM-Account-Planning-Cowork-Agent/1.Overview.md) - seller review, CRM permissions and write-back approval
 
 ---
 
