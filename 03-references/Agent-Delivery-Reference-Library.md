@@ -167,6 +167,8 @@ availability and controls before delivery.
 | [Keep your presentation on-brand with Copilot](https://support.microsoft.com/topic/keep-your-presentation-on-brand-with-copilot-a3f7ff23-4d5a-4a4d-9ba0-a0a3e0dc8db4) | End-user guidance for brand-compliant generation |
 | In this repo: [Branded Office Artifact Generation](../02-patterns/Branded-Office-Artifact-Generation/Branded-Office-Artifact-Generation.md) | The delivery pattern |
 | In this repo: [CRM Account Planning Cowork Agent](../01-scenarios/CRM-Account-Planning-Cowork-Agent/1.Overview.md) | The scenario that combines Cowork, MCP, and artifact generation |
+| In this repo: [Persona-Based Cowork Scenarios](../01-scenarios/README.md#persona-based-cowork-scenarios) | Twelve persona delivery guides, original starter archives and explicit package-versus-tenant validation status |
+| In this repo: [Persona Skill Routing and Scope Isolation](../02-patterns/Persona-Skill-Routing-and-Scope-Isolation/Persona-Skill-Routing-and-Scope-Isolation.md) | Same-name/version conflicts, built-in overlap, route-or-clarify, actual source scope and update/rollback acceptance |
 
 ---
 

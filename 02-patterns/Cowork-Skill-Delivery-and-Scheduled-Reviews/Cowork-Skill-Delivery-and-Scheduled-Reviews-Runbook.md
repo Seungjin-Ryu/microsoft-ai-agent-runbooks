@@ -45,6 +45,12 @@ Document approval controls and a manual fallback **action route**, not a fake su
    public packages. Record any instruction changes for regression testing.
 5. Save an approved version identifier, owner and rollback copy in the governed workspace.
 
+For multi-persona delivery, also complete the
+[persona-routing and scope-isolation runbook](../Persona-Skill-Routing-and-Scope-Isolation/Persona-Skill-Routing-and-Scope-Isolation-Runbook.md).
+Inspect outer ZIP wrappers and package/skill version differences recorded in each resource guide.
+Resolve same-name variants, sibling handoffs and built-in overlap before installing multiple
+packs; do not rely on upload order or a persona label to select the implementation or scope.
+
 **Deliverable:** reviewed package/reference inventory, no broken dependencies or unexplained tools.
 
 ## 4. Install and Discover
