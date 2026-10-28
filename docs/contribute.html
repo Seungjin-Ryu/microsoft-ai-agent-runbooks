@@ -153,6 +153,311 @@
       </div>
     </div>
   </section>
+  <!-- STEP-BY-STEP CONTRIBUTION GUIDE -->
+  <section class="section guide" id="contribution-guide" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">How to contribute</div>
+        <h2>Your first pull request, step by step</h2>
+        <p class="muted">
+          A pull request is how you suggest a change: you work on your own copy of the repository, then ask the
+          maintainers to bring your changes into the original. Never done it before? Follow the steps in order and
+          copy the commands as you go. You will need a GitHub account, Git on your computer
+          (<code>git --version</code> shows whether it is installed) and any text editor, such as Visual Studio Code.
+        </p>
+      </div>
+
+      <div class="guide-note" style="margin-top:0">
+        <strong>Only fixing a typo or a broken link?</strong> You can skip the command line. Open the file on GitHub,
+        select the pencil icon (<em>Edit this file</em>) and follow the prompts — GitHub forks the repository for you
+        and walks you through proposing the change. For anything bigger, use the steps below.
+      </div>
+
+      <div class="guide-part" style="margin-top:2.25rem">
+        <div class="guide-part-kicker">The big picture</div>
+        <h3>Three copies of the repository</h3>
+        <p>
+          Git gives each copy a short name, and you will meet <code>upstream</code> and <code>origin</code> in the
+          commands below. Text highlighted like <span class="guide-ph">&lt;your-username&gt;</span> is a placeholder:
+          replace it with your own value.
+        </p>
+      </div>
+
+      <div class="guide-map">
+        <div class="guide-node">
+          <div class="guide-node-icon" aria-hidden="true">🌐</div>
+          <h4>The original</h4>
+          <span class="guide-node-name">upstream</span>
+          <p><code>microsoft/ai-agent-runbooks</code> on GitHub. Only maintainers change it.</p>
+        </div>
+        <div class="guide-link"><span class="fwd">Fork</span><span class="back">Pull request</span></div>
+        <div class="guide-node">
+          <div class="guide-node-icon" aria-hidden="true">🍴</div>
+          <h4>Your fork</h4>
+          <span class="guide-node-name">origin</span>
+          <p>Your personal copy on GitHub. You can change it freely.</p>
+        </div>
+        <div class="guide-link"><span class="fwd">Clone</span><span class="back">Push</span></div>
+        <div class="guide-node">
+          <div class="guide-node-icon" aria-hidden="true">💻</div>
+          <h4>Your computer</h4>
+          <span class="guide-node-name">local clone</span>
+          <p>The copy on your machine, where you edit files and save changes.</p>
+        </div>
+      </div>
+      <p class="guide-caption">
+        Other people's new work travels the other way: when you sync (step 4) it comes from the original straight to
+        your computer.
+      </p>
+
+      <div class="guide-part">
+        <div class="guide-part-kicker">Part 1</div>
+        <h3>One-time setup</h3>
+        <p>Do these three steps once. You will not need to repeat them for later contributions.</p>
+      </div>
+
+      <ol class="guide-steps">
+        <li class="guide-step">
+          <div class="guide-num">1</div>
+          <div class="guide-body">
+            <h4>Fork the repository</h4>
+            <p>
+              A fork is your own copy of the repository on GitHub, so you can change it freely without touching the
+              original. Open the repository, select <strong>Fork</strong> at the top right, then
+              <strong>Create fork</strong>.
+            </p>
+            <p><a href="https://github.com/microsoft/ai-agent-runbooks/fork" target="_blank" rel="noopener">Create your fork on GitHub →</a></p>
+            <div class="guide-note is-check"><strong>You should see</strong> your own copy at <code>github.com/&lt;your-username&gt;/ai-agent-runbooks</code> in the address bar.</div>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">2</div>
+          <div class="guide-body">
+            <h4>Clone your fork to your computer</h4>
+            <p>
+              Cloning downloads your fork so you can edit the files. Run the commands in a terminal: Git Bash,
+              PowerShell, Terminal or the terminal inside Visual Studio Code.
+            </p>
+<pre tabindex="0"><code>git clone https://github.com/<span class="guide-ph">&lt;your-username&gt;</span>/ai-agent-runbooks.git
+cd ai-agent-runbooks</code></pre>
+            <div class="guide-note">Prefer SSH? Use <code>git@github.com:&lt;your-username&gt;/ai-agent-runbooks.git</code> instead. The first clone can take a few minutes, which is normal.</div>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">3</div>
+          <div class="guide-body">
+            <h4>Connect your clone to the original repository</h4>
+            <p>
+              Add the original repository as a second remote called <code>upstream</code>. This is how you will pick
+              up other people's latest changes later.
+            </p>
+<pre tabindex="0"><code><span class="c"># Add the original repository under the nickname "upstream"</span>
+git remote add upstream https://github.com/microsoft/ai-agent-runbooks.git
+
+<span class="c"># Check the result</span>
+git remote -v</code></pre>
+            <div class="guide-note is-check"><strong>You should see</strong> two names, each listed twice (fetch and push): <code>origin</code> is your fork and <code>upstream</code> is the original.</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="guide-part">
+        <div class="guide-part-kicker">Part 2</div>
+        <h3>Every time you contribute</h3>
+        <p>Repeat these six steps for each change: a new scenario, a new pattern or a fix.</p>
+      </div>
+
+      <ol class="guide-steps" start="4">
+        <li class="guide-step">
+          <div class="guide-num">4</div>
+          <div class="guide-body">
+            <h4>Sync your fork with the original</h4>
+            <p>
+              Always start from the latest version. <em>Fetch</em> downloads what is new; <em>merge</em> applies it to
+              your <code>main</code> branch.
+            </p>
+<pre tabindex="0"><code><span class="c"># Switch to your main branch</span>
+git checkout main
+
+<span class="c"># Download the latest changes from the original repository</span>
+git fetch upstream
+
+<span class="c"># Apply them to your main branch</span>
+git merge upstream/main
+
+<span class="c"># Optional: update your fork on GitHub as well</span>
+git push origin main</code></pre>
+            <div class="guide-note">You never commit to <code>main</code> yourself (see step 5), so this is always a clean update with no conflicts. Prefer clicking? On your fork's GitHub page choose <strong>Sync fork → Update branch</strong>, then run <code>git checkout main</code> followed by <code>git pull</code> on your computer.</div>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">5</div>
+          <div class="guide-body">
+            <h4>Create a branch for your change</h4>
+            <p>
+              A branch is a separate workspace for one change. Make a new one for every contribution, so
+              <code>main</code> stays clean and each pull request stays small and easy to review.
+            </p>
+<pre tabindex="0"><code><span class="c"># Create a branch from the up-to-date main and switch to it</span>
+git checkout -b <span class="guide-ph">&lt;branch-name&gt;</span></code></pre>
+            <p>Pick a short, descriptive name, for example <code>fix-broken-link-overview</code> or <code>add-hr-onboarding-scenario</code>.</p>
+            <div class="guide-note is-warn"><strong>Never commit directly to the <code>main</code> branch.</strong> Keep it as a clean mirror of the original, so syncing in step 4 always works.</div>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">6</div>
+          <div class="guide-body">
+            <h4>Make your changes and commit them</h4>
+            <p>
+              Edit or add files in your editor. Follow the standards above: hyphenated Title-Case names, the four
+              standard files for a scenario, the overview and runbook pair for a pattern. Then add a row for your work
+              to the table in its section README.
+            </p>
+<pre tabindex="0"><code><span class="c"># See what you changed</span>
+git status
+
+<span class="c"># Stage your changes, ready to be saved</span>
+git add .
+
+<span class="c"># Save them as a commit with a short message: what changed and why</span>
+git commit -m "Add Invoice Triage scenario"</code></pre>
+            <p>You can commit as many times as you like while you work.</p>
+            <div class="guide-note is-warn"><strong>This repository is public.</strong> Never commit secrets, credentials or customer-confidential information.</div>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">7</div>
+          <div class="guide-body">
+            <h4>Refresh and tidy up before you submit</h4>
+            <p>
+              While you worked, other people may have merged their changes. <em>Rebase</em> replays your commits on top
+              of the latest <code>main</code>, so your pull request merges cleanly.
+            </p>
+<pre tabindex="0"><code><span class="c"># Download the latest changes</span>
+git fetch upstream
+
+<span class="c"># Replay your commits on top of them</span>
+git rebase upstream/main</code></pre>
+            <div class="guide-note is-check"><strong>Nothing new upstream?</strong> Git simply reports that your branch is up to date. That is fine.</div>
+
+            <details class="guide-more">
+              <summary><span class="chev" aria-hidden="true">›</span> Git stopped with a conflict?</summary>
+              <div class="guide-more-body">
+                <p>A conflict means someone else changed the same lines as you. Git pauses and lists the affected files.</p>
+                <ol>
+                  <li>Open each listed file and find the markers <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</li>
+                  <li>Keep the content that should survive, respecting the changes already made upstream, and delete the markers.</li>
+                  <li>Save the file, then continue:</li>
+                </ol>
+<pre tabindex="0"><code>git add <span class="guide-ph">&lt;file&gt;</span>
+git rebase --continue</code></pre>
+                <p>Changed your mind? <code>git rebase --abort</code> takes you back to where you were before the rebase.</p>
+              </div>
+            </details>
+
+            <details class="guide-more">
+              <summary><span class="chev" aria-hidden="true">›</span> Optional: combine small commits into one</summary>
+              <div class="guide-more-body">
+                <p>Lots of tiny commits ("fix typo", "oops") clutter the history. An interactive rebase lets you squash them into a few clear ones.</p>
+<pre tabindex="0"><code>git rebase -i upstream/main</code></pre>
+                <p>An editor opens with your commits listed. Leave the first one as <code>pick</code>, change the others to <code>squash</code> (or <code>s</code>), then save and close. A second editor lets you write the combined commit message.</p>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">8</div>
+          <div class="guide-body">
+            <h4>Push your branch and open the pull request</h4>
+<pre tabindex="0"><code><span class="c"># Upload your branch to your fork on GitHub</span>
+git push origin <span class="guide-ph">&lt;branch-name&gt;</span></code></pre>
+            <p>Then, on GitHub:</p>
+            <ol>
+              <li>Open your fork. A banner offers <strong>Compare &amp; pull request</strong>: select it. (No banner? Choose your branch from the branch menu, then <strong>Contribute → Open pull request</strong>.)</li>
+              <li>Check the direction: the base is <code>microsoft/ai-agent-runbooks</code> on <code>main</code>, and the head is your fork and your branch.</li>
+              <li>Give it a clear title and a short description: what changed, why, and any related issue.</li>
+              <li>Select <strong>Create pull request</strong>.</li>
+            </ol>
+            <div class="guide-note"><strong>First pull request?</strong> A bot checks whether you need to agree to the Contributor Licence Agreement (see above). If it asks, follow its instructions. You only do this once.</div>
+
+            <details class="guide-more">
+              <summary><span class="chev" aria-hidden="true">›</span> Push rejected after a rebase or squash?</summary>
+              <div class="guide-more-body">
+                <p>Rewriting commits you have already pushed changes your branch's history, so a normal push is refused. Use a forced push on your own branch only: the <code>--force-with-lease</code> flag stops it overwriting work you have not seen.</p>
+<pre tabindex="0"><code>git push --force-with-lease origin <span class="guide-ph">&lt;branch-name&gt;</span></code></pre>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-num">9</div>
+          <div class="guide-body">
+            <h4>Respond to review, then clean up</h4>
+            <p>
+              A maintainer reviews your pull request and may ask for changes. Make them on the same branch, commit and
+              push again. The pull request updates automatically.
+            </p>
+<pre tabindex="0"><code>git add .
+git commit -m "Address review feedback"
+git push origin <span class="guide-ph">&lt;branch-name&gt;</span></code></pre>
+            <p>
+              Once it is merged, sync your fork again (step 4), which also switches you back to <code>main</code>. Then
+              delete the finished branch (GitHub shows a <strong>Delete branch</strong> button; on your computer run
+              <code>git branch -d <span class="guide-ph">&lt;branch-name&gt;</span></code>) and start your next contribution
+              from a fresh branch.
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="guide-note" style="margin-top:2rem">
+        <strong>Stuck on a step?</strong>
+        <a href="https://github.com/microsoft/ai-agent-runbooks/issues/new?template=question.yml" target="_blank" rel="noopener">Ask a question</a>
+        and we will help. First-time contributors are very welcome.
+      </div>
+
+      <details class="guide-more guide-maint">
+        <summary><span class="chev" aria-hidden="true">›</span> For maintainers: test and merge a pull request</summary>
+        <div class="guide-more-body">
+          <p>
+            This part is for the people who handle incoming pull requests. In your clone of the original repository,
+            <code>origin</code> is <code>microsoft/ai-agent-runbooks</code> itself, with no fork in between.
+          </p>
+
+          <h4>1. Try the pull request locally (optional)</h4>
+          <p>Replace <span class="guide-ph">123</span> with the pull request number shown on GitHub.</p>
+<pre tabindex="0"><code><span class="c"># Download the pull request into a local branch</span>
+git fetch origin pull/<span class="guide-ph">123</span>/head:pr-<span class="guide-ph">123</span>
+
+<span class="c"># Switch to it and try it out</span>
+git checkout pr-<span class="guide-ph">123</span></code></pre>
+          <p>Treat it as a read-only test copy. Review comments belong on the pull request page.</p>
+
+          <h4>2. Merge on GitHub (the usual way)</h4>
+          <p>When GitHub reports no conflicts, select <strong>Merge pull request</strong> on the pull request page, then <strong>Confirm merge</strong>.</p>
+
+          <h4>3. Or merge from the command line</h4>
+          <p>Useful when you want to check or adjust the result before it lands on <code>main</code>.</p>
+<pre tabindex="0"><code><span class="c"># Check out the branch you are merging into</span>
+git checkout main
+
+<span class="c"># Download the contributor's branch and merge it in one go</span>
+git pull https://github.com/<span class="guide-ph">&lt;contributor&gt;</span>/ai-agent-runbooks.git <span class="guide-ph">&lt;branch-name&gt;</span>
+
+<span class="c"># Publish the result</span>
+git push origin main</code></pre>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <!-- DISCLAIMER -->
   <section class="section disclaimer-section">
     <div class="wrap">
