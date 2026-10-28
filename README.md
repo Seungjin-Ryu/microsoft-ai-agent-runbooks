@@ -63,6 +63,25 @@ Whether you're building your first agent or scaling across multiple business dom
 - 🏢 [Workplace Agent](./01-scenarios/Workplace-Agent/) — Declarative agent that handles internal FAQ inquiries and application request workflows using SharePoint, Dataverse, and Power Automate  
 
 
+### Persona-Based Cowork Scenarios
+
+Twelve configuration-first persona suites follow the Chief of Staff documentation model, with
+unchanged starter plugin archives, package/version notes, source and approval boundaries, and
+workflow-specific acceptance tests. Archive availability is not tenant deployment or acceptance.
+
+| Domain | Persona scenarios |
+|---|---|
+| Leadership | [Decision Maker](./01-scenarios/Decision-Maker-Cowork-Agent/1.Overview.md), [Force Multiplier](./01-scenarios/Force-Multiplier-Cowork-Agent/1.Overview.md) |
+| Sales | [Quota Carrier](./01-scenarios/Quota-Carrier-Cowork-Agent/1.Overview.md), [Number Owner](./01-scenarios/Number-Owner-Cowork-Agent/1.Overview.md) |
+| Marketing | [Campaign Operator](./01-scenarios/Campaign-Operator-Cowork-Agent/1.Overview.md), [Launch Lead](./01-scenarios/Launch-Lead-Cowork-Agent/1.Overview.md) |
+| Finance and operations | [Close Owner](./01-scenarios/Close-Owner-Cowork-Agent/1.Overview.md), [Procurement Operator](./01-scenarios/Procurement-Operator-Cowork-Agent/1.Overview.md) |
+| Legal | [Contract Counsel](./01-scenarios/Contract-Counsel-Cowork-Agent/1.Overview.md), [Portfolio Counsel](./01-scenarios/Portfolio-Counsel-Cowork-Agent/1.Overview.md) |
+| Service | [Case Specialist](./01-scenarios/Case-Specialist-Cowork-Agent/1.Overview.md), [Service Ops Leader](./01-scenarios/Service-Ops-Leader-Cowork-Agent/1.Overview.md) |
+
+Use the [persona catalogue](./01-scenarios/README.md#persona-based-cowork-scenarios) and
+[Persona Skill Routing and Scope Isolation](./02-patterns/Persona-Skill-Routing-and-Scope-Isolation/Persona-Skill-Routing-and-Scope-Isolation.md)
+to select workflows and qualify overlapping packages before installation.
+
 **Need implementation patterns?** Check out [02-patterns/](./02-patterns/) for proven technical approaches including Copilot Studio orchestration, RAG patterns, and multi-agent design.
 
 - 🛡️ [Agent Governance & Rollout Control Plane](./02-patterns/Agent-Governance-and-Rollout-Control-Plane/) — Separating agent creation from consumption, controlling sharing, establishing an approval route, and building the inventory and audit position that enterprise rollouts depend on
@@ -86,6 +105,7 @@ Whether you're building your first agent or scaling across multiple business dom
 - ✋ [Human-in-the-Loop Review & Approval](./02-patterns/Human-in-the-Loop-Review-and-Approval/) — Designing the gate between an agent's output and a consequence: gate placement, what the reviewer must be shown, confidence-based routing, review fatigue, and the audit record
 - 📑 [Intelligent Document Processing Pipeline](./02-patterns/Intelligent-Document-Processing-Pipeline/) — Classify → extract → validate → route → output: extraction stack selection, confidence thresholds derived from measured data, validation against master data, and the downstream boundary when the target system has no API
 - 🚦 [Pilot-to-Scale Validation Gates](./02-patterns/Pilot-to-Scale-Validation-Gates/) — Evidence-gated progression from pilot to scale: signed boundary, control posture, verification tests, success criteria, ownership matrix and a recorded expand/extend/pause/stop decision
+- [Persona Skill Routing and Scope Isolation](./02-patterns/Persona-Skill-Routing-and-Scope-Isolation/Persona-Skill-Routing-and-Scope-Isolation.md) - Route-or-clarify, same-name skill/version conflicts, built-in overlap and verified seller/team, delegate and case/matter scope across persona packs; includes a delivery runbook.
 - 🔎 [MCP Federated Connectors](./02-patterns/MCP-Federated-Connectors/MCP-Federated-Connectors.md) — A separate pattern for live, read-only external retrieval in supported Microsoft 365 Copilot experiences without a source index, including custom connector onboarding, complex-authentication limitations, and private-only on-premises connectivity gaps
 - 🔌 [MCP Server Integration](./02-patterns/MCP-Server-Integration/) — Connecting third-party systems (Salesforce, Workday, ServiceNow, Databricks, Snowflake, GitHub) to Copilot Cowork, declarative agents, Copilot Studio, and Foundry via Model Context Protocol servers, including tool design, per-user identity, dynamic tool discovery, and gateway-mediated topologies for on-premises and private-network backends (APIM, Apigee, Workato, MuleSoft)
 

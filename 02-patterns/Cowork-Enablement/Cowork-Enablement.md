@@ -142,6 +142,10 @@ Follow the [24-step implementation runbook](Cowork-Enablement-Runbook.md), inclu
 
 ## Scenario Applications
 
+- The twelve [persona-based Cowork scenarios](../../01-scenarios/README.md#persona-based-cowork-scenarios)
+  reuse these platform gates. Their archives do not provision source permissions, connectors,
+  billing or schedules; each scenario adds its own source, domain, approval and output tests.
+  Qualify coexistence with [Persona Skill Routing and Scope Isolation](../Persona-Skill-Routing-and-Scope-Isolation/Persona-Skill-Routing-and-Scope-Isolation.md).
 - [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md): qualify leader
   and delegate access, people-safety controls, draft review and the weekly schedule before
   accepting the five-skill workflow.
