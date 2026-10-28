@@ -13,7 +13,7 @@ docs/
 ├── scenarios.html      → Full scenario catalogue with live search + platform filters
 ├── patterns.html       → Full pattern catalogue with live search + theme filters
 ├── references.html     → Reference library, repository map, scenario anatomy
-├── contribute.html     → Contribution shapes, file standards, naming rules, CLA
+├── contribute.html     → Contribution shapes, file standards, naming rules, CLA, step-by-step fork and pull request guide
 ├── .nojekyll           → Tells GitHub Pages to serve the files as-is
 └── assets/
     ├── data.js         → Generated scenario/pattern catalogue and reference metadata
