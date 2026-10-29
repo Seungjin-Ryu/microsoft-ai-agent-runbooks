@@ -66,6 +66,50 @@ def heading_ids(text: str) -> set[str]:
 
 
 class PersonaScenarioTests(unittest.TestCase):
+    def test_readme_uses_standard_tree_and_catalogue_entries(self) -> None:
+        readme = (ROOT / "01-scenarios/README.md").read_text(encoding="utf-8")
+        tree_match = re.search(r"```\n(.*?)\n```", readme, re.DOTALL)
+        self.assertIsNotNone(tree_match)
+        blocks = re.split(r"(?m)(?=^├── )", tree_match.group(1))
+        rows = [line for line in readme.splitlines() if line.startswith("| [")]
+        reference_rows = [
+            row for row in rows
+            if re.search(r"\]\(\./Chief-of-Staff-Cowork-Agent/\)", row)
+        ]
+        self.assertEqual(len(reference_rows), 1)
+        reference_status = reference_rows[0].strip("|").split("|")[-1].strip()
+        expected_children = [
+            "│   ├── 📂 0.Resources/",
+            "│   ├── 1.Overview.md",
+            "│   ├── 2.Architecture.md",
+            "│   ├── 3.Runbook.md",
+            "│   └── 4.Sample-prompts.md",
+        ]
+        for persona in PERSONAS:
+            with self.subTest(persona=persona):
+                folder = f"{persona}-Cowork-Agent"
+                entries = [
+                    block.strip().splitlines() for block in blocks
+                    if re.match(rf"├── 📂 {re.escape(folder)}/\s+← ", block)
+                ]
+                self.assertEqual(len(entries), 1)
+                self.assertTrue(entries[0][0].endswith(reference_status))
+                self.assertEqual(entries[0][1:], expected_children)
+                matches = [
+                    row for row in rows
+                    if re.search(rf"\]\(\./{re.escape(folder)}/\)", row)
+                ]
+                self.assertEqual(len(matches), 1)
+                cells = [cell.strip() for cell in matches[0].strip("|").split("|")]
+                self.assertEqual(len(cells), 5)
+                self.assertTrue(all(cells))
+                self.assertEqual(cells[-1], reference_status)
+                for child in ("0.Resources", *DOCUMENTS[:4]):
+                    self.assertTrue((scenario(persona) / child).exists(), child)
+        self.assertIn("### Guidelines for New Scenarios", readme)
+        self.assertIn("Status refers to repository content, not deployment", readme)
+        self.assertIn("Neither\nlabel implies tenant deployment or completed acceptance", readme)
+
     def test_standard_structure_and_honest_status(self) -> None:
         for persona in PERSONAS:
             with self.subTest(persona=persona):
