@@ -18,7 +18,7 @@ const SCENARIOS = [
       "OneDrive",
       "Excel Online"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Executive Decision Support"
   },
   {
@@ -33,7 +33,7 @@ const SCENARIOS = [
       "SharePoint",
       "OneDrive"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Executive Delegation / Coordination"
   },
   {
@@ -48,7 +48,7 @@ const SCENARIOS = [
       "Microsoft Teams",
       "SharePoint"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Seller Productivity"
   },
   {
@@ -64,7 +64,7 @@ const SCENARIOS = [
       "Power BI",
       "Microsoft Fabric"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Sales Leadership / Pipeline"
   },
   {
@@ -79,7 +79,7 @@ const SCENARIOS = [
       "SharePoint",
       "Excel Online"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Marketing / Campaign Execution"
   },
   {
@@ -94,7 +94,7 @@ const SCENARIOS = [
       "SharePoint",
       "OneDrive"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Marketing / Launch Activation"
   },
   {
@@ -109,7 +109,7 @@ const SCENARIOS = [
       "Microsoft Fabric",
       "SharePoint"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Finance / Close and Controls"
   },
   {
@@ -124,7 +124,7 @@ const SCENARIOS = [
       "Outlook",
       "Microsoft Teams"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Procurement / Operations"
   },
   {
@@ -140,7 +140,7 @@ const SCENARIOS = [
       "Microsoft Teams",
       "SharePoint"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Legal / Agreement Lifecycle"
   },
   {
@@ -156,7 +156,7 @@ const SCENARIOS = [
       "Outlook",
       "Microsoft Teams"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Legal / Portfolio and Matter Evidence"
   },
   {
@@ -171,7 +171,7 @@ const SCENARIOS = [
       "Outlook",
       "Microsoft Teams"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Service / Complex Cases"
   },
   {
@@ -187,7 +187,7 @@ const SCENARIOS = [
       "Microsoft Teams",
       "Power BI"
     ],
-    "status": "Documentation and Starter Archive Available; tenant validation required",
+    "status": "Available",
     "type": "Service / Operations Leadership"
   },
   {
@@ -918,6 +918,16 @@ const PATTERNS = [
     "status": "Available",
     "file": "Human-in-the-Loop-Review-and-Approval/Human-in-the-Loop-Review-and-Approval.md",
     "theme": "Governance & Operations"
+  },
+  {
+    "id": "Copilot-Studio-Harness-Selection",
+    "title": "Copilot Studio Harness Selection and Cowork Decision Pattern",
+    "icon": "🧩",
+    "desc": "This pattern first decides use an existing experience or build an agent, then compares two runtimes inside Microsoft Copilot Studio. Cowork is an experience choice, not a third Studio harness. Here, Cowork means Microsoft 365 Copilot Cowork for work or school accounts, not Anthropic Claude Cowork or the personal-account preview. Use the selection runbook to turn the comparison into a documented architecture decision. Check the upfront compatibility gaps before following the comprehensive decision tree.",
+    "tech": [],
+    "status": "Documentation Available",
+    "file": "Copilot-Studio-Harness-Selection/Copilot-Studio-Harness-Selection.md",
+    "theme": "Architecture & Design"
   }
 ];
 
