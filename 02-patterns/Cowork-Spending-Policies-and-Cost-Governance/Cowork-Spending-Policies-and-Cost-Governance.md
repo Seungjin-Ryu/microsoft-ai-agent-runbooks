@@ -205,7 +205,7 @@ Multi-persona installation does not create a separate spending identity for each
 - [Cowork Skill Delivery and Scheduled Reviews](../Cowork-Skill-Delivery-and-Scheduled-Reviews/Cowork-Skill-Delivery-and-Scheduled-Reviews.md) - scheduled prompts raise consumption
 - [Cowork Enablement](../Cowork-Enablement/Cowork-Enablement.md) - shared tenant readiness and operational acceptance
 - Scenario: [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md) - leader cohort, weekly preparation and cost review
-- Scenario: [Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md) - recurring review intensity and function/cohort attribution
+- Scenario: [Insights Analyst](../../01-scenarios/Insights-Analyst-Cowork-Agent/1.Overview.md) - recurring review intensity and function/cohort attribution
 - Scenario: [CRM Account Planning](../../01-scenarios/CRM-Account-Planning-Cowork-Agent/1.Overview.md) - seller cohort, artifact-generation costs and separately funded MCP hosting
 
 ---

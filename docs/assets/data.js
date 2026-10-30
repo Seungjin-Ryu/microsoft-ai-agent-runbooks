@@ -237,8 +237,8 @@ const SCENARIOS = [
     "type": "Leadership Productivity / Executive Readiness"
   },
   {
-    "id": "Recurring-Analytics-Cowork-Agent",
-    "title": "Recurring Analytics Cowork Agent",
+    "id": "Insights-Analyst-Cowork-Agent",
+    "title": "Insights Analyst Cowork Agent",
     "icon": "📊",
     "desc": "Six configured skills: one router and five consolidated Sales, Finance, Retail, Manufacturing and Service reviews from approved sources; KPI reconciliation, RLS, Markdown and HTML outputs.",
     "tech": [

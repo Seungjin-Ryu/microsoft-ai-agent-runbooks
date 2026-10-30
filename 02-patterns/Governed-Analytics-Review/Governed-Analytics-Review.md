@@ -129,7 +129,7 @@ apply this contract wherever numerical review is included:
 These are proposed applications, not claims of live-tenant acceptance. Reuse an existing model
 only after actual query access and measure definitions are validated for the intended identity.
 
-- [Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md):
+- [Insights Analyst](../../01-scenarios/Insights-Analyst-Cowork-Agent/1.Overview.md):
   primary pattern for Sales, Finance, Retail, Manufacturing and Service reviews.
 - [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md):
   conditional application when a leadership pack includes approved governed metrics.

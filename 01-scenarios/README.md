@@ -71,7 +71,7 @@ Each scenario folder is self-contained and follows a standardized structure so t
 │   ├── 2.Architecture.md
 │   ├── 3.Runbook.md
 │   └── 4.Sample-prompts.md
-├── 📂 Recurring-Analytics-Cowork-Agent/   ← ✅ Available
+├── 📂 Insights-Analyst-Cowork-Agent/      ← ✅ Available
 │   ├── 📂 0.Resources/
 │   ├── 1.Overview.md
 │   ├── 2.Architecture.md
@@ -336,12 +336,12 @@ These are configured skill suites, not twelve new hosted runtimes; existing scen
 scenario documentation set; **📋 Overview Available** identifies overview-only content. Neither
 label implies tenant deployment or completed acceptance.
 
-For Chief of Staff, Recurring Analytics and the twelve persona-based Cowork scenarios, starter
+For Chief of Staff, Insights Analyst and the twelve persona-based Cowork scenarios, starter
 archives are also available in each scenario's resource folder. Review its resource guide for
 package versions, layout, compatibility and validation status before installation.
 
 Apply the [Cowork Enablement pattern](../02-patterns/Cowork-Enablement/Cowork-Enablement.md)
-within Chief of Staff, Recurring Analytics, CRM Account Planning and the persona-based Cowork
+within Chief of Staff, Insights Analyst, CRM Account Planning and the persona-based Cowork
 scenarios. Tenant enablement is shared delivery guidance, not an additional business scenario.
 
 | Scenario | Type | Description | Platform | Status |
@@ -359,7 +359,7 @@ scenarios. Tenant enablement is shared delivery guidance, not an additional busi
 | [Case Specialist Cowork Agent](./Case-Specialist-Cowork-Agent/) | Service / Complex Cases | Case intake, knowledge-cited replies, diagnosis hypotheses, stalled-case outreach and escalation handoffs; PII controls and specialist-approved actions. | Microsoft 365 Copilot Cowork, SharePoint, OneDrive, Outlook, Teams | ✅ Available |
 | [Service Ops Leader Cowork Agent](./Service-Ops-Leader-Cowork-Agent/) | Service / Operations Leadership | SLA triage, service reviews, intervention trackers, customer-feedback themes and team-level coaching; fresh source/timezone checks and no individual agent scoring. | Microsoft 365 Copilot Cowork, Excel Online, SharePoint, Outlook, Teams, Power BI | ✅ Available |
 | [Chief-of-Staff-Cowork-Agent](./Chief-of-Staff-Cowork-Agent/) | Leadership Productivity / Executive Readiness | Five configured skills for weekly briefs, executive drafts, leadership packs and observable team-work digests; draft-first approvals, people safety and optional recurring preparation. | Microsoft 365 Copilot Cowork, Outlook, Teams, SharePoint, OneDrive | ✅ Available |
-| [Recurring-Analytics-Cowork-Agent](./Recurring-Analytics-Cowork-Agent/) | Business Analytics / Recurring Reviews | Six configured skills: one router and five consolidated Sales, Finance, Retail, Manufacturing and Service reviews from approved sources; KPI reconciliation, RLS, Markdown and HTML outputs. | Microsoft 365 Copilot Cowork, Power BI, Microsoft Fabric, Excel Online | ✅ Available |
+| [Insights Analyst Cowork Agent](./Insights-Analyst-Cowork-Agent/) | Business Analytics / Recurring Reviews | Six configured skills: one router and five consolidated Sales, Finance, Retail, Manufacturing and Service reviews from approved sources; KPI reconciliation, RLS, Markdown and HTML outputs. | Microsoft 365 Copilot Cowork, Power BI, Microsoft Fabric, Excel Online | ✅ Available |
 | [Calendar Request Approval Agent](./Calendar-Request-Approval-Agent/1.Overview.md) | Workforce Productivity / Approvals | Confirm calendar requests, enforce request-type authorization and approval policy, and publish to SharePoint and an explicitly authorized Outlook calendar. Includes production recovery guidance. | Microsoft Copilot Studio, Power Automate, SharePoint, Office 365 Outlook | ✅ Available |
 | [Country-Aware HR Knowledge Agent](./Country-Aware-HR-Knowledge-Agent/1.Overview.md) | HR Knowledge / Governed Retrieval | Country-scoped SharePoint knowledge with organization-wide and optional restricted lanes, custom ingestion, authenticated retrieval, ACL freshness, and permission-aware access. | Microsoft Copilot Studio, Microsoft Graph, Azure AI Search, Azure OpenAI, SharePoint | ✅ Available |
 | [Autonomous-Invoice-Orchestration-Ageny](./Autonomous-Invoice-Orchestration-Agent/) | Payment Approval Automation | Automates the payment request and approval process.| Microsoft Copilot Studios, Power Automate|✅ Available |
