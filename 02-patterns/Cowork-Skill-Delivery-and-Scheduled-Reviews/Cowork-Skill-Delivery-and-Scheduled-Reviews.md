@@ -134,7 +134,7 @@ Follow the [implementation runbook](Cowork-Skill-Delivery-and-Scheduled-Reviews-
   sibling routing use the [persona-isolation runbook](../Persona-Skill-Routing-and-Scope-Isolation/Persona-Skill-Routing-and-Scope-Isolation-Runbook.md).
 - [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md): five skills,
   weekly leadership preparation, review gates and people-safety boundaries.
-- [Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md):
+- [Insights Analyst](../../01-scenarios/Insights-Analyst-Cowork-Agent/1.Overview.md):
   six skills, explicit source binding and repeatable business-function reviews.
 - [CRM Account Planning](../../01-scenarios/CRM-Account-Planning-Cowork-Agent/1.Overview.md):
   reusable skill/template lifecycle around its separately engineered MCP integration; this

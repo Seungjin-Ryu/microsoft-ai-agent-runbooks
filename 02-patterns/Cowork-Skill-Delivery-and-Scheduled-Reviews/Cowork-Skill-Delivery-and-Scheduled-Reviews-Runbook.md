@@ -133,5 +133,5 @@ creation alone. No automatic distribution unless separately scoped and enforceab
 - Baseline comparison and expansion criteria.
 
 See the [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/3.Runbook.md) and
-[Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/3.Runbook.md) runbooks
+[Insights Analyst](../../01-scenarios/Insights-Analyst-Cowork-Agent/3.Runbook.md) runbooks
 for function-specific tests and outputs.

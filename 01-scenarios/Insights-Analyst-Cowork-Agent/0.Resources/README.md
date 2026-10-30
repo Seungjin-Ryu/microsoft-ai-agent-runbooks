@@ -1,11 +1,11 @@
-# Resources and Source Basis - Recurring Analytics
+# Resources and Source Basis - Insights Analyst
 
 ## Published Archives
 
 | File | Contents | Intended use |
 |---|---|---|
-| [Recurring-Business-Analytics-Cowork-Plugin.zip](Recurring-Business-Analytics-Cowork-Plugin.zip) | Cowork plugin package: root `manifest.json`, `color.png`, `outline.png`, and six expanded skill folders under `skills/`, each containing `SKILL.md` and `reference.md` (15 files total). | Upload the complete ZIP through the supported Cowork plugin surface after reviewing its manifest and tenant requirements. |
-| [recurring-analytics-business-functions-skills.zip](recurring-analytics-business-functions-skills.zip) | Skills-only bundle: root `README.md` and six skill folders, each with `SKILL.md` and `reference.md` (13 files total). No app manifest or icons. | Inspect/customise individual skills for the supported per-user skill installation route. |
+| [Insights-Analyst-Cowork-Plugin.zip](Insights-Analyst-Cowork-Plugin.zip) | Cowork plugin package: root `manifest.json`, `color.png`, `outline.png`, and six expanded skill folders under `skills/`, each containing `SKILL.md` and `reference.md` (15 files total). | Upload the complete ZIP through the supported Cowork plugin surface after reviewing its manifest and tenant requirements. |
+| [insights-analyst-business-functions-skills.zip](insights-analyst-business-functions-skills.zip) | Skills-only bundle: root `README.md` and six skill folders, each with `SKILL.md` and `reference.md` (13 files total). No app manifest or icons. | Inspect/customise individual skills for the supported per-user skill installation route. |
 
 The plugin manifest declares package version **1.1.2** and manifest version **1.28**.
 In both variants, the concierge declares skill version **1.0.0** and the five business-function

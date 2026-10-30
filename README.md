@@ -59,7 +59,7 @@ Whether you're building your first agent or scaling across multiple business dom
 - 🎫 [IT Service Desk Insights Agent](./01-scenarios/IT-Service-Desk-Insights-Agent/) — Declarative agent grounded on ServiceNow knowledge and catalog content that answers employee how-to questions and performs sentiment and theme analysis over ticket text, with permission-trimmed retrieval.
 - 🧩 [M365 Agent](./01-scenarios/M365-Agent/) — Collection of pre-built, deploy-ready Microsoft 365 Copilot agents (e.g., Plan My Day, Executive Briefing, Request Tracker) designed to accelerate common workplace scenarios and enable rapid customization.
 - 🗓️ [Meeting Intelligence Agent](./01-scenarios/Meeting-Intelligence-Agent/) — Extracts decisions, actions, and owners from meeting transcripts under a hard evidence rule, deduplicates across recurring series, and tracks commitments to closure. Includes the consent position and the invented-action release gate.
-- 📊 [Recurring Analytics Cowork Agent](./01-scenarios/Recurring-Analytics-Cowork-Agent/) — Six configured skills for Sales, Finance, Retail, Manufacturing and Service reviews from existing Power BI, Fabric or Excel data, with reconciled KPIs and Markdown/HTML outputs.
+- 📊 [Insights Analyst Cowork Agent](./01-scenarios/Insights-Analyst-Cowork-Agent/) — Six configured skills for Sales, Finance, Retail, Manufacturing and Service reviews from existing Power BI, Fabric or Excel data, with reconciled KPIs and Markdown/HTML outputs.
 - 🏢 [Workplace Agent](./01-scenarios/Workplace-Agent/) — Declarative agent that handles internal FAQ inquiries and application request workflows using SharePoint, Dataverse, and Power Automate  
 
 

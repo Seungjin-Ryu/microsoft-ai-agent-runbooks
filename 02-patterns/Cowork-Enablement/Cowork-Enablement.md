@@ -149,7 +149,7 @@ Follow the [24-step implementation runbook](Cowork-Enablement-Runbook.md), inclu
 - [Chief of Staff](../../01-scenarios/Chief-of-Staff-Cowork-Agent/1.Overview.md): qualify leader
   and delegate access, people-safety controls, draft review and the weekly schedule before
   accepting the five-skill workflow.
-- [Recurring Analytics](../../01-scenarios/Recurring-Analytics-Cowork-Agent/1.Overview.md):
+- [Insights Analyst](../../01-scenarios/Insights-Analyst-Cowork-Agent/1.Overview.md):
   close platform and cost gates, then separately prove actual data queries, KPI fidelity,
   RLS and copied-artifact access for each accepted function.
 - [CRM Account Planning](../../01-scenarios/CRM-Account-Planning-Cowork-Agent/1.Overview.md):
