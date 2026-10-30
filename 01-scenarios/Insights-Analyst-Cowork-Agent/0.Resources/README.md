@@ -34,7 +34,7 @@ thresholds and review guidance; confirm these against the customer's authoritati
   omitted in the plugin variant. Do not assume the archives are byte-identical.
 - The plugin manifest includes **placeholder `example.com` developer, privacy and terms URLs**.
   Have the package owner replace them with approved organisation values in a working copy
-  before organisational distribution. The published ZIP has not been changed.
+  before organisational distribution. The URLs in the published ZIP have not been changed.
 - The skills-only README mentions additional sibling analytics skills and a broader output
   pack that are **not included in either archive**. Do not treat those references as bundled assets.
 - The ZIPs do not bundle or enable the Fabric IQ data-access plugin, provision reports/models,
@@ -74,8 +74,11 @@ before distribution remain required. Copied HTML artifacts do not automatically 
 ## Validation Status
 
 Archive integrity, file inventory, manifest metadata and skill-variant differences were inspected
-locally on September 25, 2026. The ZIPs were not modified. Upload compatibility, actual data
-queries, RLS, output fidelity and live-tenant acceptance have not been validated.
+locally on September 25, 2026. On October 30, 2026, naming text in both ZIPs (plugin display
+name, skill suite identifier, skills-only README and descriptive wording) was aligned with the
+Insights Analyst name; skill logic, versions and file inventory were not changed. Upload
+compatibility, actual data queries, RLS, output fidelity and live-tenant acceptance have not
+been validated.
 
 See the [overview](../1.Overview.md), [runbook](../3.Runbook.md) and
 [governed analytics pattern](../../../02-patterns/Governed-Analytics-Review/Governed-Analytics-Review.md).
