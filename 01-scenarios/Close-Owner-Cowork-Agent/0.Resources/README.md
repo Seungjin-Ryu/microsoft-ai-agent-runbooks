@@ -4,16 +4,21 @@
 
 | File | Contents | Intended use |
 |---|---|---|
-| [close-owner-cowork-plugin.zip](close-owner-cowork-plugin.zip) | Original supplied persona plugin; 18 files, 7 skill folders with `SKILL.md` and `reference.md`, app manifest and icons | Inspect and prepare an owner-approved working package for a supported tenant installation route |
+| [close-owner-cowork-plugin.zip](close-owner-cowork-plugin.zip) | Supplied persona plugin; 18 files, 7 skill folders with `SKILL.md` and `reference.md`, app manifest and icons | Inspect and prepare an owner-approved working package for a supported tenant installation route |
 
 **Package version:** `3.0.0`. **Manifest version:** `devPreview`.
 The skills declare `verified: false`; metadata and documentation availability do not establish tenant approval.
 
-**SHA-256 of the unchanged original:**
+**SHA-256 of the archive in this repository:**
 
 ```text
-683b194df5f21087efed0e5de318ce6133aac96c53568c2ac0464964afc93f4d
+c46d015c2cf6892e7e14c5180ed6c2721dec811206b88122ac00c8e3d2cb2f02
 ```
+
+The original supplied archive (SHA-256
+`683b194df5f21087efed0e5de318ce6133aac96c53568c2ac0464964afc93f4d`) differs only by one wording
+update: the Dashboard / model note in `skills/weekly-business-review/reference.md` now refers to
+the Insights Analyst scenario.
 
 ## Archive Layout and Installation
 
@@ -64,7 +69,8 @@ approved instruction changes and rerun affected tests.
 
 On **2026-10-27**, the original archive's ZIP integrity, SHA-256 copy, manifest inventory,
 declared names, skill versions and companion-file presence were inspected locally.
-The supplied source variants were compared without modifying the published archive.
+The supplied source variants were compared without modifying the published archive. On **2026-10-30**,
+the one wording update described above was applied; no other archive content changed.
 
 Upload compatibility, tenant installation, actual source access, runtime approval enforcement,
 label handling, scheduling and business acceptance **have not been validated**. The prompts and
